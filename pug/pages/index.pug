@@ -1,0 +1,18 @@
+extends ../layouts/base-layout
+
+include ../header-index
+include ../offers
+include ../advantages
+include ../example
+include ../contacts
+
+block vars
+  -pageSettings.title = "Главная";
+
+block header
+  +header-index
+block content
+  +offers
+  +advantages
+  +example
+  +contacts
