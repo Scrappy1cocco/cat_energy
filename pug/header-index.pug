@@ -1,6 +1,16 @@
 mixin header-index
   include header-menu
-
-  +header-menu
-
-  .header-index__
+  include btn
+  .header-index
+    +header-menu
+    
+    .header-index__content
+      .header-index__content-title
+        H2.header-index__title-name
+          | Функциональное питание для котов
+        SPAN.header-index__title-slogan
+          | Занялся собой? Займись котом!
+      .header-index__content-picture
+        IMG.header-index__content-img(src="..")
+      +btn({href:'#'})
+        | Подобрать программу

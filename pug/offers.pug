@@ -1,1 +1,19 @@
 mixin offers
+
+  - var oflist = [{class:'offers__item--one', src:'..', title:'Похудение', text:'Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.', btnText:'Каталог slim'},{class:'offers__item--two', src:'..', title:'Набор массы', text:'Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!', btnText:'Каталог pro'}];
+
+  .offers
+    .container
+      each link in oflist
+        .offers__item(class= link.class)
+          .offers__item-wrap
+            .offers__item-title
+              .offers__item-title-icon
+                .offers__icon-circle
+                  IMG.offers__icon-img(src= link.src)
+              H3.offers__item-title-name= link.title
+            P.offers__item-content= link.text
+            +btn({href:"#"})(class = "btn--offers")= link.btnText
+              IMG.btn__icon-offers(src="..")
+
+

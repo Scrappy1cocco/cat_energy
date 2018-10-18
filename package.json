@@ -28,7 +28,6 @@
   },
   "scripts": {
     "test": "editorconfig-tools check *",
-    "public": "gulp style pug jsCopy fonts",
     "start": "gulp serve"
   }
 }

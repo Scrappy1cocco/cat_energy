@@ -1,7 +1,22 @@
 mixin header-menu
-  ul
-    li 1
-    li 2
-    li 3
-    li 4
-    li 5
+  - var menu = [{href:'index.html', class:'header-menu__list-item--logo', img:'#', text:'#'}, {href:'index.html', class:'header-menu__list-item--index', img:'', text:'Главная'}, {href:'catalog.html', img:'#', text:'Каталог продукции'}, {href:'form.html', img:'#', text:'Подбор программы'}];
+
+  .header-menu
+    NAV.header-menu__nav.header-menu__nav--closed.header-menu__nav--nojs
+      A.header-menu__toggle(href="#") Открыть меню
+
+      UL.header-menu__list
+        each link, index in menu
+          if index > 0
+            LI
+              A.header-menu__list-item(href= link.href class= link.class)
+                SPAN.header-menu__item-text= link.text
+          else
+            LI
+              A.header-menu__list-item(href= link.href class= link.class)
+                IMG.header-menu__item-logo.header-menu__item-logo--once(src= link.img)
+                PICTURE
+                  SOURCE(media = "(min-width: 1150px)" srcset = "..")
+                  SOURCE(media = "(min-width: 768px)" srcset = "..")
+                  IMG.header-menu__item-logo(src = "..")
+
