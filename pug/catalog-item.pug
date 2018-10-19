@@ -1,0 +1,27 @@
+mixin catalog-item(data)
+  
+  - var classTDL = catalog-item__table-left-column;
+  - var classTDR = catalog-item__table-right-column;
+
+  .catalog-item
+
+    PICTURE.catalog-item__pict
+      SOURCE(media = "(min-width: 1150px)" srcset = data.setdesk)
+      SOURCE(media = "(min-width: 768px)" srcset = data.settabl)
+      IMG(src = data.source, alt = data.alter)
+    .catalog-item__about
+
+      H3.catalog-item__about-title= data.title
+      TABLE.catalog-item__table
+        TR
+          TD(class= classTDL) Объем 
+          TD(class= classTDR)= data.bulk
+        TR
+          TD(class= classTDL) Вкус 
+          TD(class= classTDR)= data.taste
+        TR
+          TD(class= classTDL) Цена 
+          TD(class= classTDR)= data.price
+      +btn({href:'#'})
+        | Заказать
+

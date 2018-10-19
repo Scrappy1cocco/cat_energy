@@ -1,0 +1,13 @@
+extends ../layouts/base-layout
+
+include ../header-common
+include ../catalog-list
+
+block vars
+  -pageSettings.title = "Каталог продукции";
+
+block header
+  +header-common({title:"Каталог продукции"})
+block content
+  +catalog-list
+  

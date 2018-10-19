@@ -1,0 +1,21 @@
+mixin catalog-list
+  
+  include catalog-item
+  include btn
+
+  - var list = [{_setdesk:'..', _settabl:'..', _source:'..', _alter:'pro 500 курица', _title:'cat energy pro 500 г', _bulk:'500 г', _taste:'Курица', _price:'700 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'pro 1000 курица', _title:'cat energy pro 1000 г', _bulk:'1000 г', _taste:'Курица', _price:'1000 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'pro 500 рыба', _title:'cat energy pro 500 г', _bulk:'500 г', _taste:'Рыба', _price:'700 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'pro 1000 рыба', _title:'cat energy pro 1000 г', _bulk:'1000 г', _taste:'Рыба', _price:'1000 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'slim 500 гречка', _title:'cat energy slim 500 г', _bulk:'500 г', _taste:'Гречка', _price:'400 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'slim 1000 гречка', _title:'cat energy slim 1000 г', _bulk:'1000 г', _taste:'Гречка', _price:'700 р.'},{_setdesk:'..', _settabl:'..', _source:'..', _alter:'slim 500 рис', _title:'cat energy slim 500 г', _bulk:'500 г', _taste:'Рис', _price:'500 р.'},];
+
+  .catalog-list
+    .container
+
+      each link in list
+        +catalog-item({setdesk:link._setdesk, settabl:link._settabl, source:link._source, alter:link._alter, title:link._title, bulk:link._bulk, taste:link._taste, price:link._price})
+
+      .catalog-item.catalog-item--more
+        .catalog-item__more-icon
+          H3.catalog-item__more-title
+            | Показать ещё 100500 товаров
+          SPAN.catalog-item__more-text
+            | На самом деле вкусов гораздо больше!
+          +btn({href:'#'})
+            | Показать все

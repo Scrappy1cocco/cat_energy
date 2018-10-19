@@ -1,0 +1,10 @@
+mixin header-common(data)
+  
+  include header-menu
+
+  .header-common
+    +header-menu
+
+    .header-common__title
+      H2.header-common__title-name= data.title
+
