@@ -1,1 +1,17 @@
 mixin page-footer
+  - var socs = [{atr:'page-footer__social-link--insta', text:'Мы в инстаграмме', ref:'https://www.instagram.com'}, {atr:'page-footer__social-link--fb', text:'Мы в фейсбуке', ref:'https://www.facebook.com'}, {atr:'page-footer__social-link--twit', text:'Мы в твитере', ref:'https://www.twitter.com'}];
+
+  FOOTER.page-footer
+    .content.page-footer__wrap
+      A.page-footer__logo
+        IMG(srs='..' alt='logo-footer')
+      
+      .page-footer__social
+        each link in socs
+          A.page-footer__social-link(href= link.ref class= link.atr)
+            != link.text
+                        
+      .page-footer__copyright
+          A.page-footer__copyright-link(href='https://www.htmlacademy.ru') Разработано
+            
+
