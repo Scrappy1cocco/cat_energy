@@ -1,0 +1,13 @@
+mixin catalog-dopitem(data)
+  
+  include btn
+
+  .catalog-dopitem
+
+    .catalog-dopitem__content
+      SPAN.catalog-dopitem__title= data.title
+      .catalog-dopitem__price
+        SPAN.catalog-dopitem__price-amount= data.amount
+        SPAN.catalog-dopitem__price-value= data.value
+    +btn({href:'#'})
+      | Заказать
