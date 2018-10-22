@@ -1,6 +1,7 @@
 extends ../layouts/base-layout
 
 include ../header-common
+include ../order
 
 block vars
   -pageSettings.title = "Подбор программы";
@@ -8,3 +9,4 @@ block vars
 block header
   +header-common({title:"Подбор программы"})
 block content
+  +order

@@ -1,0 +1,69 @@
+mixin order
+  
+  include btn
+
+  - var info = [{_class:'order__info-turn--name', _id:'infoname', _text:'Имя:*', _phdr:'Барсик'}, {_class:'order__info-turn--weight', _id:'infoweight', _text:'Вес (кг):*', _phdr:'7'}, {_class:'order__info-turn--age', _id:'infoage', _text:'Возраст (лет):', _phdr:'7'}];
+
+  - var style = [{_class:'order__style-turn--slim', _id:'styleslim', _text:'Похудение'}, {_class:'order__style-turn--pro', _id:'stylepro', _text:'Набор массы'},{_class:'order__style-turn--idk', _id:'styleidk', _text:'Не знаю (нужен ваш совет)'}];
+
+  - var products = [{_class:'order__products-turn--sugar', _id:'sugar', _text:'сахарозаменитель'}, {_class:'order__products-turn--water', _id:'water', _text:'питьевая вода'}, {_class:'order__products-turn--milk', _id:'milk', _text:'молоко'}, {_class:'order__products-turn--vitamins', _id:'vitamins', _text:'витамины'}];
+
+  FORM.order
+
+    P.order__intro.
+      Заполните анкету и мы подберем программу питания для вашего кота
+
+    .order__cat
+      .order__cat-info
+
+        each link in info
+          .order__info-turn(class= link._class)
+            label(for= link._id)= link._text
+            input(type='text', id= link._id, placeholder= link._phdr)
+
+      .order__cat-style
+
+        each link in style
+          .order__style-turn(class= link._class)
+            input(type='radio', name = 'styleturn' id= link._id, value= link._id)
+            label(for= link._id)= link._text
+
+    .order__owner
+
+      H3.order__owner-title
+        | Контактные данные (владельца кота)
+
+      .order__owner-contacts
+        .order__contacts-email
+          label(for = 'email') E-mail:*
+          input(type = 'text' id = 'email' placeholder = 'kuklachev@gmail.com')
+          img(src='' alt='иконка письма')
+
+        .order__contacts-phone
+          label(for = 'phone') Телефон:*
+          input(type = 'text' id = 'phone' placeholder = '8 (960) 900-60-60')
+          img(src='' alt='иконка телефона')
+
+    .order__comment
+
+      H3.order__comment-title
+        | Комментарий
+
+      TEXTAREA.order__comment-text(placeholder='Расскажите обо всех повадках кота')
+    
+    .order__dop
+
+      H3.order__dop-title
+        | Дополнительно
+
+      .order__dop-products
+
+        each link in products
+          .order__products-turn(class = link._class)
+            input(type = 'checkbox' name = 'product' id= link._id, value= link._id)
+            label(for= link._id)= link._text
+    
+    .order__btn-wrap
+
+      input(type = 'submit' value = "Отправить заявку" class = 'order__btn-submit')
+      SPAN.order__btn-text * — Обязательные поля
