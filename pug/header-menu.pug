@@ -1,5 +1,5 @@
 mixin header-menu
-  - var menu = [{href:'index.html', class:'header-menu__list-item--logo', img:'#', text:'#'}, {href:'index.html', class:'header-menu__list-item--index', img:'', text:'Главная'}, {href:'catalog.html', img:'#', text:'Каталог продукции'}, {href:'form.html', img:'#', text:'Подбор программы'}];
+  - var menu = [{href:'index.html', class:'header-menu__list-item--logo', img:'img/logo-mobile.svg', text:'#'}, {href:'index.html', class:'header-menu__list-item--index', img:'', text:'Главная'}, {href:'catalog.html', img:'#', text:'Каталог продукции'}, {href:'form.html', img:'#', text:'Подбор программы'}];
 
   .header-menu
     NAV.header-menu__nav.header-menu__nav--closed.header-menu__nav--nojs
@@ -14,9 +14,9 @@ mixin header-menu
           else
             LI
               A.header-menu__list-item(href= link.href class= link.class)
-                IMG.header-menu__item-logo.header-menu__item-logo--once(src= link.img)
+                IMG.header-menu__item-logo.header-menu__item-logo--once(src= link.img alt = "Одноразовый логотип")
                 PICTURE
-                  SOURCE(media = "(min-width: 1150px)" srcset = "..")
+                  SOURCE(media = "(min-width: 1450px)" srcset = "..")
                   SOURCE(media = "(min-width: 768px)" srcset = "..")
-                  IMG.header-menu__item-logo(src = "..")
-
+                  IMG.header-menu__item-logo(src = "img/logo-mobile-header.svg" alt = "Логотип основного меню сайта")
+ 

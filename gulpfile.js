@@ -1,3 +1,5 @@
+"use strict";
+
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var autoprefixer = require("autoprefixer");
@@ -10,6 +12,7 @@ var imagemin = require("gulp-imagemin");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
+var del = require("del");
 
 gulp.task('pug', function buildHTML() {
     return gulp.src('pug/pages/*.pug')
@@ -22,10 +25,8 @@ gulp.task('pug', function buildHTML() {
 });
 
 gulp.task("style", function() {
-    return gulp.src(["src/sass/*.scss", "src/sass/blocks/*.scss"])
+    gulp.src(["src/sass/style.scss"])
     	.pipe(plumber())
-        .pipe(concat('style.scss'))
-        .pipe(gulp.dest("src/sass"))
         .pipe(sass())
         .pipe(postcss([
 	      autoprefixer({
@@ -37,6 +38,7 @@ gulp.task("style", function() {
 	        "last 2 Edge versions"
 	      ]})
 	    ]))
+        .pipe(gulp.dest("src/css"))
 	    .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest("public/css"))
@@ -90,5 +92,5 @@ gulp.task("serve", ["style"], function() {
     gulp.watch("src/sass/**/*.scss", ["style"]);
     gulp.watch("pug/**/*.pug", ["pug"]);
     gulp.watch("src/img/*.+(jpg|jpeg|png|gif)", ["imgs"]);
-    gulp.watch(["src/*.html", "pug/*.pug", "pug/**/*.pug"]).on("change", server.reload);
+    gulp.watch(["src/*.html", "pug/*.pug", "pug/**/*.pug", "src/css/style.css"]).on("change", server.reload);
 });

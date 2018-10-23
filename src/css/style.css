@@ -1,0 +1,16 @@
+.header-menu {
+  width: 100%; }
+  .header-menu__list {
+    list-style: none; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  min-width: 280px;
+  margin: 0 20px; }
+
+@font-face {
+  src: url(../fonts/oswald.woff), url(../fonts/oswald.woff2);
+  font-family: Oswald; }
