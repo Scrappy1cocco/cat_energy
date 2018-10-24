@@ -6,12 +6,13 @@ mixin header-index
     
     .header-index__content
       .container
-        .header-index__content-title
-          H2.header-index__title-name
-            | Функциональное питание для котов
-          SPAN.header-index__title-slogan
-            | Занялся собой? Займись котом!
-        .header-index__content-picture
-          IMG.header-index__content-img(src="..")
-        +btn({href:'#'})
-          | Подобрать программу
+        .header-index__content-wrap
+          .header-index__content-title
+            H2.header-index__title-name
+              | Функциональное питание для котов
+            SPAN.header-index__title-slogan
+              | Занялся собой? Займись котом!
+          .header-index__content-picture
+            IMG.header-index__content-img(src="img/index-can-mobile@1x.png")
+          +btn({href:'#'})
+            | Подобрать программу

@@ -1,3 +1,7 @@
+@import "variables";
+@import "mixins";
+@import "common";
+@import "fonts";
 @import "blocks/advantages";
 @import "blocks/catalog-item";
 @import "blocks/catalog-list";
@@ -9,6 +13,4 @@
 @import "blocks/offers";
 @import "blocks/order";
 @import "blocks/page-footer";
-@import "common";
-@import "fonts";
-@import "variables";
+@import "blocks/btn"
