@@ -1,4 +1,4 @@
-.header-menu {
+.header {
 	width: 100%;
 	min-width: 280px;
 	font-family: OswaldMedium;
@@ -6,7 +6,7 @@
 	line-height: 20px;
 	
 
-	&__nav--nojs .header-menu__toggle {
+	&__nav--nojs .header__toggle {
 		@include below($mobile-only) {
 			display: none;
 		}
@@ -24,19 +24,22 @@
 	  background-color: #fff;
 	  cursor: pointer;
 	  border: none;
+	  @include above($tablet) {
+			display: none;
+		}
 	}
-	&__nav--closed .header-menu__list-item {
+	&__nav--closed .header__list-item {
 		@include below($mobile-only) {
 			display: none;
 		}
 	}
-	&__nav--closed .header-menu__list-item--logo {
+	&__nav--closed .header__list-item--logo {
 		@include below($mobile-only) {
 			display: flex;
 		}
 	}
 
-	&__nav--closed .header-menu__toggle::before {
+	&__nav--closed .header__toggle::before {
 		  content: "";
 		  position: absolute;
 		  top: 15px;
@@ -47,7 +50,7 @@
 		  box-shadow: 0 6px 0 0 #000,
 		              0 12px 0 0 #000;
 	}
-	&__nav--opened .header-menu__toggle {
+	&__nav--opened .header__toggle {
 		  top: 18px;
 		  right: 15px;
 		  &::before,
@@ -71,6 +74,13 @@
 
 	&__list {
 		list-style: none;
+		@include above($tablet) {
+			display: flex;
+			justify-content: space-between;
+			width: 95%;
+			margin: 0 auto;
+			margin-top: 24px;
+		}
 	}
 	&__list-item {
 		display: flex;
@@ -83,19 +93,42 @@
 		color: #111;
 		border-bottom: 1px solid #e6e6e6;
 		box-sizing: border-box;
+		@include above($tablet) {
+			position: relative;
+			flex-direction: column;
+			width: auto;
+			font-family: OswaldRegular;
+			font-size: 18px;
+			line-height: 25px;
+			border-bottom: none;
+		}
+	}
+
+	&__list-item--logo {
+		@include above($tablet) {
+			margin-right: 58px;
+		}
 	}
 	
 	&__item-logo {
 		width: 101px;
 		height: 18px;
+		@include above($tablet) {
+			width: 173px;
+			height: 60px;
+		}
 	}
 	&__item-logo--once {
 		position: absolute;
+		top: 10px;
 		left: 20px;
 		width: 35px;
 		height: 40px;
 		@include above($mobile-big) {
 			left: 50px;
+		}
+		@include above($tablet) {
+			display: none;
 		}
 	}
 }

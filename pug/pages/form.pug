@@ -1,12 +1,13 @@
 extends ../layouts/base-layout
 
-include ../header-common
+include ../common-title
 include ../order
 
 block vars
   -pageSettings.title = "Подбор программы";
 
-block header
-  +header-common({title:"Подбор программы"})
 block content
+  +common-title("common-title__form", "Подбор программы")
+    P.common-title__form-text.
+      Заполните анкету и мы подберем программу питания для вашего кота
   +order

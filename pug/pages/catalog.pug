@@ -1,14 +1,14 @@
 extends ../layouts/base-layout
 
-include ../header-common
+include ../common-title
 include ../catalog-list
 include ../catalog-doplist
 
 block vars
   -pageSettings.title = "Каталог продукции";
 
-block header
-  +header-common({title:"Каталог продукции"})
+
 block content
+  +common-title("common-title__catalog", "Каталог продукции")
   +catalog-list
   +catalog-doplist

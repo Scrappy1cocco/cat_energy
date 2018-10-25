@@ -1,0 +1,100 @@
+.intro {
+	min-height: 555px;
+	&__content {
+		padding-top: 25px;
+		min-height: 490px;
+		background: url(../img/index-background-mobile@1x.jpg) no-repeat 50% 0;
+		font-family: OswaldRegular;
+		color: #fff;
+		@include above($tablet) {
+			background: none;
+		}
+	}
+
+	&__content::before {
+		position: absolute;
+		content: "";
+		display: block;
+		margin-top: -25px;
+		height: 305px;
+		width: 100%;
+		background: linear-gradient(90deg, #65a93c, #63a73a);
+		z-index: -1;
+		@include above($tablet) {
+			display: none;
+		}
+	}
+
+	&__content-wrap {
+		width: 100%;
+		min-width: 280px;
+		@include above($mobile-big) {
+			width: 350px;
+		}
+		@include above($tablet) {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+	
+	&__content-title {
+		margin-bottom: 25px;
+		@include above($tablet) {
+			color: #111;
+		}
+		@include above($tablet) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			max-width: 415px;
+		}
+	}
+
+	&__title-name {
+		font-size: 36px;
+		line-height: 36px;
+		text-align: center;
+		font-weight: 300;
+		@include above($tablet) {
+			font-size: 60px;
+			line-height: 60px;
+			text-align: left;
+		} 
+	}
+
+	&__title-slogan {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 14px;
+		@include above($tablet) {
+			margin-top: 40px;
+			font-size: 20px;
+			line-height: 20px;
+		} 
+	}
+	
+	&__content-img {
+		display: block;
+		margin: 0 auto;
+		@include above($tablet) {
+			position: absolute;
+			margin-left: -90px;
+			z-index: -1;
+		} 
+	}
+
+	&__btn {
+		@include above($tablet) {
+			height: 52px;
+			width: 245px;
+			margin: 0;
+			margin-top: 22px;
+			font-size: 20px;
+			line-height: 20px;
+		} 
+	}
+}

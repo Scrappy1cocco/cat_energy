@@ -1,6 +1,6 @@
 extends ../layouts/base-layout
 
-include ../header-index
+include ../intro
 include ../offers
 include ../advantages
 include ../example
@@ -8,9 +8,9 @@ include ../example
 block vars
   -pageSettings.title = "Главная";
 
-block header
-  +header-index
+
 block content
+  +intro
   +offers
   +advantages
   +example
