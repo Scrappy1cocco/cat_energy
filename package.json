@@ -29,6 +29,6 @@
   "scripts": {
     "test": "editorconfig-tools check *",
     "start": "gulp serve",
-    "public": "gulp clean pug style scripts imgs fonts"
+    "public": "gulp clean pug style scripts imgs vect fonts"
   }
 }
