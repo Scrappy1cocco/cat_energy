@@ -45,6 +45,11 @@ gulp.task("style", function() {
         .pipe(server.reload({stream: true}));
 });
 
+gulp.task("fonts", function() {
+  return gulp.src (["src/fonts/*.woff", "src/fonts/*.woff2"], {base: "."})
+  .pipe(gulp.dest("public"))
+});
+
 gulp.task("scripts", function() {
     return gulp.src("src/js/*.js") 
         .pipe(concat('scripts.js')) 
