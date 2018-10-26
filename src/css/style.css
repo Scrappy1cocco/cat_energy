@@ -172,7 +172,11 @@ body, ul, h2 {
   @media screen and (min-width: 1440px) {
     .intro__btn {
       top: 280px;
-      left: 30px; } }
+      left: 30px; }
+      .intro__btn:hover {
+        background: #5daa2f; }
+      .intro__btn:active {
+        color: #8ec46e; } }
 
 .header {
   width: 100%;
@@ -270,10 +274,22 @@ body, ul, h2 {
     @media screen and (min-width: 1440px) {
       .header__list-item {
         font-size: 20px;
-        color: #fff; } }
+        color: #fff; }
+        .header__list-item:hover {
+          opacity: 0.6; }
+        .header__list-item:active {
+          opacity: 0.3; } }
   @media screen and (min-width: 768px) {
     .header__list-item--logo {
       margin-right: 58px; } }
+  @media screen and (min-width: 1440px) {
+    .header__list-item--logo {
+      font-size: 20px;
+      color: #fff; }
+      .header__list-item--logo:hover {
+        opacity: 0.8; }
+      .header__list-item--logo:active {
+        opacity: 0.6; } }
   @media screen and (min-width: 768px) {
     .header__list-wrap {
       display: flex;

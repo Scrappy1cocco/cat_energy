@@ -4,11 +4,13 @@
 	font-family: OswaldMedium;
 	font-size: 20px;
 	line-height: 20px;
+
 	@include above($desktop) {
-			position: absolute;
-		}  
+		position: absolute;
+	}  
 
 	&__nav--nojs .header__toggle {
+
 		@include below($mobile-only) {
 			display: none;
 		}
@@ -26,16 +28,21 @@
 	  background-color: #fff;
 	  cursor: pointer;
 	  border: none;
+
 	  @include above($tablet) {
 			display: none;
 		}
 	}
+
 	&__nav--closed .header__list-item {
+
 		@include below($mobile-only) {
 			display: none;
 		}
 	}
+
 	&__nav--closed .header__list-item--logo {
+
 		@include below($mobile-only) {
 			display: flex;
 		}
@@ -52,9 +59,11 @@
 		  box-shadow: 0 6px 0 0 #000,
 		              0 12px 0 0 #000;
 	}
+
 	&__nav--opened .header__toggle {
 		  top: 18px;
 		  right: 15px;
+
 		  &::before,
 		  &::after {
 		    content: "";
@@ -65,10 +74,12 @@
 		    height: 2px;
 		    background-color: #000;
 		  }
+
 		  &::before {
 		    transform: rotate(45deg);
 		    box-shadow: none;
 		  }
+
 		  &::after {
 		    transform: rotate(-45deg);
 		  }
@@ -76,6 +87,7 @@
 
 	&__list {
 		list-style: none;
+
 		@include above($tablet) {
 			display: flex;
 			justify-content: space-between;
@@ -83,11 +95,13 @@
 			margin: 0 auto;
 			margin-top: 24px;
 		}
+
 		@include above($desktop) {
 			width: 80%;
 			min-width: 1250px;
 		}   
 	}
+
 	&__list-item {
 		display: flex;
 		height: 65px;
@@ -99,6 +113,7 @@
 		color: #111;
 		border-bottom: 1px solid #e6e6e6;
 		box-sizing: border-box;
+
 		@include above($tablet) {
 			position: relative;
 			flex-direction: column;
@@ -108,25 +123,39 @@
 			line-height: 25px;
 			border-bottom: none;
 		}
+
 		@include above($desktop) {
 			font-size: 20px;
 			color: #fff;
-		} 
 
+			@include hoverOpacity(.6);
+			@include activeOpacity(.3);
+		} 
 	}
 
 	&__list-item--logo {
+
 		@include above($tablet) {
 			margin-right: 58px;
 		}
+
+		@include above($desktop) {
+			font-size: 20px;
+			color: #fff;
+			
+			@include hoverOpacity(.8);
+			@include activeOpacity(.6);
+		} 
 	}
 	
 	&__list-wrap {
+
 		@include above($tablet) {
 			display: flex;
 			justify-content: space-between;
 			min-width: 440px;
 		}
+
 		@include above($desktop) {
 			min-width: 480px;
 		} 
@@ -135,20 +164,24 @@
 	&__item-logo {
 		width: 101px;
 		height: 18px;
+
 		@include above($tablet) {
 			width: 173px;
 			height: 60px;
 		}
 	}
+
 	&__item-logo--once {
 		position: absolute;
 		top: 10px;
 		left: 20px;
 		width: 35px;
 		height: 40px;
+
 		@include above($mobile-big) {
 			left: 50px;
 		}
+
 		@include above($tablet) {
 			display: none;
 		}

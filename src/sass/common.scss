@@ -7,18 +7,22 @@ body, ul, h2 {
 	width: 80%;
 	min-width: 280px;
 	margin: 0 auto;
+
 	@include above($mobile-big) {
-			max-width: 350px;
-		}
+		max-width: 350px;
+	}
+
 	@include above($tablet) {
-			max-width: 900px;
-		}
+		max-width: 900px;
+	}
+
 	@include above($tablet-big) {
-			max-width: 1050px;
-		}
+		max-width: 1050px;
+	}
+
 	@include above($desktop) {
-			max-width: 1220px;
-		}  
+		max-width: 1220px;
+	}  
 }
 
 .header-menu__list-item--active::after {
