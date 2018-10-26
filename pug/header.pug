@@ -9,18 +9,19 @@ mixin header
           A.header__list-item(href = "index.html" class = "header__list-item--logo")
             IMG.header__item-logo.header__item-logo--once(src = "img/svg/logo-mobile.svg" alt = "Одноразовый логотип")
             PICTURE
-              SOURCE(media = "(min-width: 1450px)" srcset = "..")
+              SOURCE(media = "(min-width: 1440px)" srcset = "img/svg/logo-desktop.svg")
               SOURCE(media = "(min-width: 768px)" srcset = "img/svg/logo-tablet.svg")
               IMG.header__item-logo(src = "img/svg/logo-mobile-header.svg" alt = "Логотип основного меню сайта")
-        LI        
-          A.header__list-item(href = "index.html")
-            SPAN.header__item-text Главная
-        LI
-          A.header__list-item(href = "catalog.html")
-            SPAN.header__item-text Каталог продукции
-        LI
-          A.header__list-item(href = "form.html")
-            SPAN.headeru__item-text Подбор программы
+        .header__list-wrap
+          LI        
+            A.header__list-item(href = "index.html")
+              SPAN.header__item-text Главная
+          LI
+            A.header__list-item(href = "catalog.html")
+              SPAN.header__item-text Каталог продукции
+          LI
+            A.header__list-item(href = "form.html")
+              SPAN.headeru__item-text Подбор программы
 
 
 

@@ -41,7 +41,7 @@ gulp.task("style", function() {
         .pipe(gulp.dest("src/css"))
 	    .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest("public/css"))
+        .pipe(gulp.dest("src/css"))
         .pipe(server.reload({stream: true}));
 });
 

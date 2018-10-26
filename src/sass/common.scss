@@ -13,6 +13,12 @@ body, ul, h2 {
 	@include above($tablet) {
 			max-width: 900px;
 		}
+	@include above($tablet-big) {
+			max-width: 1050px;
+		}
+	@include above($desktop) {
+			max-width: 1220px;
+		}  
 }
 
 .header-menu__list-item--active::after {

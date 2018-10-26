@@ -4,7 +4,9 @@
 	font-family: OswaldMedium;
 	font-size: 20px;
 	line-height: 20px;
-	
+	@include above($desktop) {
+			position: absolute;
+		}  
 
 	&__nav--nojs .header__toggle {
 		@include below($mobile-only) {
@@ -81,6 +83,10 @@
 			margin: 0 auto;
 			margin-top: 24px;
 		}
+		@include above($desktop) {
+			width: 80%;
+			min-width: 1250px;
+		}   
 	}
 	&__list-item {
 		display: flex;
@@ -102,6 +108,11 @@
 			line-height: 25px;
 			border-bottom: none;
 		}
+		@include above($desktop) {
+			font-size: 20px;
+			color: #fff;
+		} 
+
 	}
 
 	&__list-item--logo {
@@ -110,6 +121,17 @@
 		}
 	}
 	
+	&__list-wrap {
+		@include above($tablet) {
+			display: flex;
+			justify-content: space-between;
+			min-width: 440px;
+		}
+		@include above($desktop) {
+			min-width: 480px;
+		} 
+	}
+
 	&__item-logo {
 		width: 101px;
 		height: 18px;

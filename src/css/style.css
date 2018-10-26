@@ -20,6 +20,12 @@ body, ul, h2 {
   @media screen and (min-width: 768px) {
     .container {
       max-width: 900px; } }
+  @media screen and (min-width: 1050px) {
+    .container {
+      max-width: 1050px; } }
+  @media screen and (min-width: 1440px) {
+    .container {
+      max-width: 1220px; } }
 
 .header-menu__list-item--active::after {
   content: "";
@@ -47,6 +53,15 @@ body, ul, h2 {
 
 .intro {
   min-height: 555px; }
+  @media screen and (min-width: 768px) {
+    .intro {
+      min-height: 860px; } }
+  @media screen and (min-width: 1050px) {
+    .intro {
+      min-height: 575px; } }
+  @media screen and (min-width: 1440px) {
+    .intro {
+      background: url(../img/index-background-desktop@1x.jpg) no-repeat 100% 0; } }
   .intro__content {
     padding-top: 25px;
     min-height: 490px;
@@ -78,7 +93,18 @@ body, ul, h2 {
       .intro__content-wrap {
         display: flex;
         flex-direction: column;
-        width: 100%; } }
+        width: 100%;
+        padding-left: 30px; } }
+    @media screen and (min-width: 1050px) {
+      .intro__content-wrap {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 890px;
+        padding-left: 0; } }
+    @media screen and (min-width: 1440px) {
+      .intro__content-wrap {
+        position: relative;
+        margin-top: 105px; } }
   .intro__content-title {
     margin-bottom: 25px; }
     @media screen and (min-width: 768px) {
@@ -89,7 +115,12 @@ body, ul, h2 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        max-width: 415px; } }
+        max-width: 415px;
+        margin-top: 75px; } }
+    @media screen and (min-width: 1440px) {
+      .intro__content-title {
+        margin-right: 61px;
+        margin-left: 30px; } }
   .intro__title-name {
     font-size: 36px;
     line-height: 36px;
@@ -120,6 +151,12 @@ body, ul, h2 {
         position: absolute;
         margin-left: -90px;
         z-index: -1; } }
+    @media screen and (min-width: 1050px) {
+      .intro__content-img {
+        position: relative; } }
+    @media screen and (min-width: 1440px) {
+      .intro__content-img {
+        z-index: 2; } }
   @media screen and (min-width: 768px) {
     .intro__btn {
       height: 52px;
@@ -128,6 +165,14 @@ body, ul, h2 {
       margin-top: 22px;
       font-size: 20px;
       line-height: 20px; } }
+  @media screen and (min-width: 1050px) {
+    .intro__btn {
+      position: absolute;
+      top: 390px; } }
+  @media screen and (min-width: 1440px) {
+    .intro__btn {
+      top: 280px;
+      left: 30px; } }
 
 .header {
   width: 100%;
@@ -135,6 +180,9 @@ body, ul, h2 {
   font-family: OswaldMedium;
   font-size: 20px;
   line-height: 20px; }
+  @media screen and (min-width: 1440px) {
+    .header {
+      position: absolute; } }
   @media screen and (max-width: 767px) {
     .header__nav--nojs .header__toggle {
       display: none; } }
@@ -195,6 +243,10 @@ body, ul, h2 {
         width: 95%;
         margin: 0 auto;
         margin-top: 24px; } }
+    @media screen and (min-width: 1440px) {
+      .header__list {
+        width: 80%;
+        min-width: 1250px; } }
   .header__list-item {
     display: flex;
     height: 65px;
@@ -215,9 +267,21 @@ body, ul, h2 {
         font-size: 18px;
         line-height: 25px;
         border-bottom: none; } }
+    @media screen and (min-width: 1440px) {
+      .header__list-item {
+        font-size: 20px;
+        color: #fff; } }
   @media screen and (min-width: 768px) {
     .header__list-item--logo {
       margin-right: 58px; } }
+  @media screen and (min-width: 768px) {
+    .header__list-wrap {
+      display: flex;
+      justify-content: space-between;
+      min-width: 440px; } }
+  @media screen and (min-width: 1440px) {
+    .header__list-wrap {
+      min-width: 480px; } }
   .header__item-logo {
     width: 101px;
     height: 18px; }

@@ -1,5 +1,14 @@
 .intro {
 	min-height: 555px;
+	@include above($tablet) {
+			min-height: 860px;
+		}
+	@include above($tablet-big) {
+			min-height: 575px;
+		}
+	@include above($desktop) {
+		background: url(../img/index-background-desktop@1x.jpg) no-repeat 100% 0;
+	}  
 	&__content {
 		padding-top: 25px;
 		min-height: 490px;
@@ -35,6 +44,17 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
+			padding-left: 30px;
+		}
+		@include above($tablet-big) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			min-width: 890px;
+			padding-left: 0;
+		} 
+		@include above($desktop) {
+			position: relative;
+			margin-top: 105px;
 		}
 	}
 	
@@ -48,7 +68,12 @@
 			flex-direction: column;
 			align-items: flex-start;
 			max-width: 415px;
+			margin-top: 75px;
 		}
+		@include above($desktop) {
+			margin-right: 61px;
+			margin-left: 30px;
+		} 
 	}
 
 	&__title-name {
@@ -84,7 +109,13 @@
 			position: absolute;
 			margin-left: -90px;
 			z-index: -1;
-		} 
+		}
+		@include above($tablet-big) {
+			position: relative;
+		}
+		@include above($desktop) {
+			z-index: 2;
+		}  
 	}
 
 	&__btn {
@@ -96,5 +127,13 @@
 			font-size: 20px;
 			line-height: 20px;
 		} 
+		@include above($tablet-big) {
+			position: absolute;
+			top: 390px;
+		}
+		@include above($desktop) {
+			top: 280px;
+			left: 30px;
+		}  
 	}
 }
