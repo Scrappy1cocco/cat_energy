@@ -41,8 +41,9 @@ gulp.task("style", function() {
         .pipe(gulp.dest("src/css"))
 	    .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest("src/css, public/css")
-        .pipe(server.reload({stream: true})));
+        .pipe(gulp.dest("src/css"))
+        .pipe(gulp.dest("public/css"))
+        .pipe(server.reload({stream: true}));
 });
 
 gulp.task("fonts", function() {
