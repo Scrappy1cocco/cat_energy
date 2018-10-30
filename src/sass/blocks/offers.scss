@@ -1,3 +1,222 @@
 .offers {
 	
+	&__wrap {
+
+		@include above($desktop) {
+			display: flex;
+			justify-content: space-between;
+		}  
+	}
+
+	&__item {
+		max-width: 350px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		background-color: #f2f2f2;
+
+		@include above($tablet) {
+			max-width: none;
+			padding-top: 60px;
+			padding-bottom: 40px;
+			margin-bottom: 30px;
+		}
+
+		@include above($desktop) {
+			width: 46.9%;
+			padding-top: 20px;
+			padding-bottom: 30px;
+			margin-right: 0;
+			margin-left: 0;
+		}  
+	}
+
+	&__item-wrap {
+		width: 240px;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		margin: 0 auto;
+
+		@include above($tablet) {
+			position: relative;
+			width: 85%;
+		}
+	}
+
+	&__item-title {
+		display: flex;
+		align-items: center;
+
+		@include above($desktop) {
+			margin-bottom: 30px;
+		}  
+	}
+
+	&__item-title-name {
+		font-family: OswaldRegular;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 37px;
+		text-transform: uppercase;
+
+		@include above($tablet) {
+			font-size: 36px;
+		}
+	}
+
+	&__item-title-icon {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		position: relative;
+		width: 50px;
+		height: 52px;
+		margin-right: 15px;
+
+		@include above($tablet) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 205px;
+			height: 215px;
+			margin-right: 0;
+		}
+
+		@include above($desktop) {
+			position: relative;
+			width: 100px;
+			height: 107px;
+			margin-right: 50px;
+		}
+	}
+
+	&__icon-circle {
+		position: absolute;
+		bottom: 0;
+		width: 50px;
+		height: 50px;
+		background: #67b737;
+		border-radius: 25px;
+		z-index: 0;
+
+		@include above($tablet) {
+			height: 200px;
+			width: 200px;
+			border-radius: 100px;
+		}
+
+		@include above($desktop) {
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	&__icon-img {
+		height: 50px;
+		width: 35px;
+		z-index: 1;
+
+		@include above($tablet) {
+			height: 198px;
+			width: 143px;
+		}
+
+		@include above($desktop) {
+			width: 72px;
+			height: 98px;
+		}
+	}
+
+	&__icon-img--pro {
+		height: 28px;
+		width: 68px;
+		margin-top: auto;
+		margin-bottom: auto;
+
+		@include above($tablet) {
+			height: 113px;
+			width: 270px;
+		}
+
+		@include above($desktop) {
+			width: 136px;
+			height: 56px;
+		}
+	}
+
+	&__item-content {
+		padding-bottom: 20px;
+		margin-bottom: 10px;
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 18px;
+		color: #444;
+		border-bottom: 1px solid #d9d9d9;
+
+		@include above($tablet) {
+			width: 63%;
+			font-size: 16px;
+			line-height: 24px;
+			border-bottom: none;
+		}
+
+		@include above($desktop) {
+			width: 100%;
+		}
+	}
+
+	&__item-content--pro {
+
+		@include above($tablet) {
+			width: 57.5%;
+			font-size: 16px;
+			line-height: 24px;
+			border-bottom: none;
+		}
+
+		@include above($desktop) {
+			width: 100%;
+		}
+	}
+
+	&__btn {
+		justify-content: flex-start;
+		width: 50%;
+		margin: 0;
+		font-size: 16px;
+		color: #111;
+		background: #f2f2f2;
+
+		@include above($tablet) {
+			font-size: 20px;
+			line-height: 20px;
+
+		}
+		
+		@include above($desktop) {
+			&:hover .offers__btn-arrow {
+				width: 30px;
+			}
+		}
+	}
+
+	&__btn-arrow {
+		position: relative;
+		height: 2px;
+		width: 17px;
+		margin-left: 10px;
+		background: #3e4242;
+		transition: .5s ease;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -4px;
+			right: -4px;
+			width: 0;
+			height: 0;
+			border: 5px solid transparent;
+			border-right: 0;
+			border-left-color: #3e4242;
+		}
+	}
 }

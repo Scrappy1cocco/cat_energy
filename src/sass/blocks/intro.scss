@@ -3,6 +3,7 @@
 
 	@include above($tablet) {
 		min-height: 860px;
+		margin-bottom: 50px;
 	}
 
 	@include above($tablet-big) {
