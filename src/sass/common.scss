@@ -4,15 +4,17 @@ body, ul, h2, h3 {
 }
 
 .container {
-	width: 93%;
+	width: 80%;
 	min-width: 280px;
+	max-width: 350px;
 	margin: 0 auto;
 
 	@include above($mobile-big) {
-		max-width: 350px;
+		
 	}
 
 	@include above($tablet) {
+		width: 93%;	
 		max-width: 900px;
 	}
 

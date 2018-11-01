@@ -1,0 +1,114 @@
+.advantages {
+	
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@include above($tablet) {
+			justify-content: space-between;
+		}
+	}
+
+	&__title {
+		font-family: OswaldRegular;
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 60px;
+		margin-bottom: 25px;
+
+		@include above($tablet) {
+			font-size: 60px;
+			margin-bottom: 60px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		margin-bottom: 10px;
+
+		@include above($tablet) {
+			position: relative;
+			height: 230px;
+			width: 45%;
+			margin-bottom: 75px;
+			flex-direction: column;
+		}
+
+		@include above($desktop) {
+			width: 25%;
+		}
+	}
+
+	&__item-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+		width: 60px;
+		margin-right: 20px;
+		background: #67b737;
+
+		@include above($tablet) {
+			height: 80px;
+			width: 80px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__icon-img {
+		height: 52px;
+		width: 52px;
+	}
+
+	&__item-text {
+		width: 70%;
+		margin-top: 3px;
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 18px;
+		color: #444;
+
+		@include above($tablet) {
+			width: 80%;
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		@include above($desktop) {
+			width: 81%;
+		}
+	}
+
+	&__item-number {
+		display: none;
+
+		@include above($tablet) {
+			display: block;
+			position: absolute;
+			top: -38px;
+			right: 67px;
+			font-family: OswaldRegular;
+			font-size: 281px;
+			line-height: 281px;
+			color: #f2f2f2;
+			z-index: -1;
+		}
+
+		@include above($desktop) {
+			right: 58px;
+		}
+	}
+
+	&__item-number--one {
+
+		@include above($tablet) {
+			right: 87px;
+		}
+
+		@include above($desktop) {
+			right: 75px;
+		}
+	}
+
+
+
+}
