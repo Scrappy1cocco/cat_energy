@@ -12,6 +12,8 @@ var imagemin = require("gulp-imagemin");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
+var svgstore = require("gulp-svgstore");
+var svgmin = require("gulp-svgmin");
 var del = require("del");
 
 gulp.task('pug', function buildHTML() {
@@ -74,6 +76,16 @@ gulp.task('imgs', function() {
             interlaced: true
         }))
         .pipe(gulp.dest("public/img"))
+});
+
+gulp.task("symbols", function() {
+    return gulp.src("src/img/svg/sprite/*.svg")
+        .pipe(svgmin())
+        .pipe(svgstore({
+            imlineSvg: true
+        }))
+        .pipe(rename("symbols.svg"))
+        .pipe(gulp.dest("src/img/svg"));
 });
 
 gulp.task("clean", function() {

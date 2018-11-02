@@ -1,17 +1,19 @@
 mixin page-footer
-  - var socs = [{atr:'page-footer__social-link--insta', text:'Мы в инстаграмме', ref:'https://www.instagram.com'}, {atr:'page-footer__social-link--fb', text:'Мы в фейсбуке', ref:'https://www.facebook.com'}, {atr:'page-footer__social-link--twit', text:'Мы в твитере', ref:'https://www.twitter.com'}];
+  - var socs = [{atr:'page-footer__social-link--vk', text:'Мы в контакте', ref:'https://www.vk.com', xhref:'img/svg/symbols.svg#icon-vk-mobile', svgClass:'page-footer__link-icon--vk'}, {atr:'page-footer__social-link--insta', text:'Мы в инстаграме', ref:'https://www.instagram.com', xhref:'img/svg/symbols.svg#icon-insta-mobile', svgClass:'page-footer__link-icon--insta'}, {atr:'page-footer__social-link--fb', text:'Мы в фейсбуке', ref:'https://www.facebook.com', xhref:'img/svg/symbols.svg#icon-fb-mobile', svgClass:'page-footer__link-icon--fb'}];
 
   FOOTER.page-footer
-    .content.page-footer__wrap
-      A.page-footer__logo
-        IMG(srs='..' alt='logo-footer')
+    .container.page-footer__wrap
+      A.page-footer__logo(href = "#")
+        IMG.page-footer__logo-icon(src='img/svg/sprite/logo-footer.svg' alt='logo-footer')
       
       .page-footer__social
         each link in socs
-          A.page-footer__social-link(href= link.ref class= link.atr)
-            != link.text
+          A.page-footer__social-link(href= link.ref class= link.atr)!= link.text
+            SVG.page-footer__link-icon(class= link.svgClass)
+              USE(xlink:href= link.xhref)
                         
       .page-footer__copyright
-          A.page-footer__copyright-link(href='https://www.htmlacademy.ru') Разработано
-            
-
+          A.page-footer__copyright-link(href='https://www.htmlacademy.ru')
+            SPAN.page-footer__link-text HTML Academy
+            SVG.page-footer__link-logo
+              USE(xlink:href = "img/svg/symbols.svg#logo-htmlacademy")

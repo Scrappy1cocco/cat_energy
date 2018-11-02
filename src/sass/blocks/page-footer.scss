@@ -1,0 +1,122 @@
+.page-footer {
+	background: #f2f2f2;
+	
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+
+		@include above($tablet) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&__logo {
+		@include flexIt(center, center);
+		height: 94px;
+
+		@include above($tablet) {
+			border: none;
+			@include hoverOpacity(.8);
+			@include activeOpacity(.6);
+		}
+	}
+
+	&__logo-icon {
+		height: 26px;
+		width: 128px;
+	}
+
+	&__social {
+		@include flexIt(center, center);		
+		height: 62px;
+		border-top: 1px solid #d9d9d9;
+		border-bottom: 1px solid #d9d9d9;
+
+		@include above($tablet) {
+			border: none;
+		}
+	}
+
+	&__social-link {
+		@include flexIt(center, center);	
+		height: 100%;
+		width: 50px;
+		font-size: 0;
+
+		@include above($desktop) {
+			&:hover .page-footer__link-icon {
+				fill: #67b737;
+			}
+			@include activeOpacity(.3);
+		}
+	}
+
+	&__social-link--vk {
+		padding-right: 5px;
+	}
+
+	&__link-icon {
+		fill: #656565;
+	}
+
+	&__link-icon--vk {
+		height: 12px;
+		width: 22px;
+
+		@include above($tablet) {
+			height: 16px;
+			width: 30px;
+		}
+	}
+
+	&__link-icon--insta {
+		height: 16px;
+		width: 16px;
+	}
+	
+	&__link-icon--fb {
+		height: 19px;
+		width: 10px;
+	}
+
+	&__copyright {
+		height: 78px;
+
+		@include above($tablet) {
+			@include flexIt(center, center);
+			height: 150px;
+			width: 163px;
+		}
+	}
+
+	&__copyright-link {
+		@include flexIt(space-between, center);	
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+
+		@include above($tablet) {
+			height: 65%;
+		}
+
+		@include above($desktop) {
+			&:hover .page-footer__link-logo {
+				fill: #67b737;
+			}
+			@include activeOpacity(.3);
+		}
+	}
+
+	&__link-text {
+		font-family: Arial;
+		color: #444;
+	}
+	
+	&__link-logo {
+		height: 34px;
+		width: 27px;
+		fill: #656565;
+	}
+}

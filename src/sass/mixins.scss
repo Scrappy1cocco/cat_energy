@@ -21,3 +21,9 @@
 		opacity: $opacity;
 	}
 }
+
+@mixin flexIt($justcont, $alitems) {
+	display: flex;
+	justify-content: $justcont;
+	align-items: $alitems;
+}
