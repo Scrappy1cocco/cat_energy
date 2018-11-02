@@ -192,7 +192,7 @@ body, ul, h2, h3 {
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-left: 30px; } }
+        padding-left: 25px; } }
     @media screen and (min-width: 1050px) {
       .intro__content-wrap {
         flex-direction: row;
