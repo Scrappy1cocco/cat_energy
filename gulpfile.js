@@ -54,7 +54,7 @@ gulp.task("fonts", function() {
 });
 
 gulp.task("vect", function() {
-  return gulp.src(["src/img/svg/*.svg"])
+  return gulp.src(["src/img/svg/**/*.svg"])
   .pipe(gulp.dest("public/img/svg"))
 });
 
