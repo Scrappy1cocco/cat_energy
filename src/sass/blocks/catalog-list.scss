@@ -13,6 +13,10 @@
 			margin: 0 auto;
 		}
 
+		@include above($desktop) {
+			max-width: 1220px;
+		}
+
 	}
 
 }

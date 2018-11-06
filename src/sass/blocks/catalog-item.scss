@@ -3,14 +3,18 @@
 	margin-bottom: 24px;
 
 	@include above($tablet) {
-			position: relative;
-			height: 433px;
-			width: 325px;
-			margin-top: 118px;
-			border: none;
-			background: #f2f2f2;
-		}
+		position: relative;
+		height: 433px;
+		width: 325px;
+		margin-top: 118px;
+		border: none;
+		background: #f2f2f2;
+	}
 
+	@include above($desktop) {
+		width: 250px;
+	}
+	
 	&__wrap {
 		@include flexIt(space-between,'');
 		flex-wrap: wrap;
@@ -27,6 +31,11 @@
 			height: 100%;
 			min-width: 250px;
 		}
+
+		@include above($desktop) {
+			min-width: 170px;
+		}
+
 	}
 	
 	&__pict {
