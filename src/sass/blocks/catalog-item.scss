@@ -1,0 +1,103 @@
+.catalog-item {
+	border-top: 1px solid #e6e6e6;
+	margin-bottom: 24px;
+
+	@include above($tablet) {
+			position: relative;
+			height: 433px;
+			width: 325px;
+			margin-top: 118px;
+			border: none;
+			background: #f2f2f2;
+		}
+
+	&__wrap {
+		@include flexIt(space-between,'');
+		flex-wrap: wrap;
+		width: 80%;
+		min-width: 280px;
+		max-width: 350px;
+		margin: 0 auto;
+
+		@include above($tablet) {
+			flex-direction: column;
+			justify-content: flex-end;
+			flex-wrap: nowrap;
+			align-items: center;
+			height: 100%;
+			min-width: 250px;
+		}
+	}
+	
+	&__pict {
+		
+		@include above($tablet) {
+			position: absolute;
+			bottom: 305px;
+			right: 0;			
+		}
+
+	}
+
+	&__about {
+		width: 140px;
+		margin-top: 25px;
+
+		@include above($tablet) {
+			width: 100%;
+
+		}
+	}
+	
+	&__about-title {
+		width: 75px;
+		margin-bottom: 10px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: #111;
+
+		@include above($tablet) {
+			width: 130px;
+			margin: 0 auto;
+			margin-bottom: 17px;
+			text-align: center;
+			font-size: 20px;
+		}
+	}
+
+	&__table {
+		width: 100%;
+		margin-left: -3px;
+		font-family: Arial;
+		font-size: 12px;
+		line-height: 12px;
+		color: #444;
+
+		@include above($tablet) {
+			font-size: 16px;
+		}
+	}
+
+	&__table-row {
+		@include flexIt(space-between,'');
+
+		@include above($tablet) {
+			padding-top: 8px;
+			padding-bottom: 8px;
+			border-bottom: 1px solid #cdcdcd;
+		}
+	}
+
+	&__btn {
+		font-size: 16px;
+		line-height: 20px;
+
+		@include above($tablet) {
+			margin-top: 33px;
+			margin-bottom: 40px;
+		}
+	}
+}

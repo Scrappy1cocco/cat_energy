@@ -1,0 +1,21 @@
+.common-title {
+	margin-bottom: 28px;
+	margin-top: 15px;
+
+	&__title {
+		font-family: OswaldRegular;
+		font-size: 36px;
+		line-height: 60px;
+		font-weight: 400;
+
+		@include above($mobile-big) {
+			text-align: center;
+		}
+
+		@include above($tablet) {
+			text-align: left;
+			font-size: 60px;
+			margin-bottom: 48px;
+		}
+	}
+}

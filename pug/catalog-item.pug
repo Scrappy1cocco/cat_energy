@@ -2,28 +2,30 @@ mixin catalog-item(data)
   
   include btn
 
-  - var classTDL = catalog-item__table-left-column;
-  - var classTDR = catalog-item__table-right-column;
+  - var classTDL = "catalog-item__table-left-column";
+  - var classTDR = "catalog-item__table-right-column";
 
   .catalog-item
+    .catalog-item__wrap
+      PICTURE
+        SOURCE(media = "(min-width: 1440px)" srcset = data.setdesk)
+        SOURCE(media = "(min-width: 768px)" srcset = data.settabl)
+        IMG.catalog-item__pict(src = data.source, srcset = data.sourset, alt = data.alter)
 
-    PICTURE.catalog-item__pict
-      SOURCE(media = "(min-width: 1150px)" srcset = data.setdesk)
-      SOURCE(media = "(min-width: 768px)" srcset = data.settabl)
-      IMG(src = data.source, alt = data.alter)
-    .catalog-item__about
+      .catalog-item__about
+        H3.catalog-item__about-title= data.title
 
-      H3.catalog-item__about-title= data.title
-      TABLE.catalog-item__table
-        TR
-          TD(class= classTDL) Объем 
-          TD(class= classTDR)= data.bulk
-        TR
-          TD(class= classTDL) Вкус 
-          TD(class= classTDR)= data.taste
-        TR
-          TD(class= classTDL) Цена 
-          TD(class= classTDR)= data.price
-      +btn({href:'#'})
+        TABLE.catalog-item__table
+          TR.catalog-item__table-row
+            TD(class= classTDL) Объем 
+            TD(class= classTDR)= data.bulk
+          TR.catalog-item__table-row
+            TD(class= classTDL) Вкус 
+            TD(class= classTDR)= data.taste
+          TR.catalog-item__table-row
+            TD(class= classTDL) Цена 
+            TD(class= classTDR)= data.price
+
+      +btn({href:'#'})(class = "catalog-item__btn")
         | Заказать
 

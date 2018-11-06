@@ -7,7 +7,7 @@
 
 	@include above($desktop) {
 		position: absolute;
-	}  
+	}
 
 	&__nav--nojs .header__toggle {
 
@@ -186,5 +186,18 @@
 			display: none;
 		}
 	}
+
 }
 
+.header--style-dark {
+	@include above($desktop) {
+		position: relative;
+	}
+
+	& .header__list-item {
+		@include above($desktop) {
+			font-size: 20px;
+			color: #000;
+		} 
+	}
+}
