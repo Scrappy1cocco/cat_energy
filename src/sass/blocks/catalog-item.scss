@@ -108,5 +108,16 @@
 			margin-top: 33px;
 			margin-bottom: 40px;
 		}
+
+		@include above($desktop) {
+			&:hover {
+				background: #5daa2f;
+			}
+
+			&:active {
+				color: #8ec46e;
+			}
+		}
 	}
 }
+

@@ -159,6 +159,125 @@ body, ul, h2, h3 {
         font-size: 60px;
         margin-bottom: 48px; } }
 
+.catalog-list__wrap {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 768px) {
+    .catalog-list__wrap {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 93%;
+      max-width: 900px;
+      margin: 0 auto; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-list__wrap {
+      max-width: 1220px; } }
+
+.catalog-item__more {
+  border-top: 1px solid #e6e6e6; }
+  @media screen and (min-width: 768px) {
+    .catalog-item__more {
+      height: 433px;
+      width: 325px;
+      margin-top: 118px;
+      border: 1px solid #e6e6e6;
+      box-sizing: border-box; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-item__more {
+      width: 250px; } }
+  .catalog-item__more-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    min-width: 280px;
+    max-width: 350px;
+    margin: 0 auto; }
+    @media screen and (min-width: 768px) {
+      .catalog-item__more-wrap {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        min-width: 250px; } }
+    @media screen and (min-width: 1440px) {
+      .catalog-item__more-wrap {
+        min-width: 170px; } }
+  .catalog-item__more-icon {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin: 26px auto; }
+    @media screen and (min-width: 768px) {
+      .catalog-item__more-icon {
+        height: 60px;
+        width: 60px;
+        margin-top: 54px; } }
+    .catalog-item__more-icon::before {
+      position: absolute;
+      left: 14px;
+      content: '';
+      display: block;
+      height: 30px;
+      width: 2px;
+      background: #d3d3d3; }
+      @media screen and (min-width: 768px) {
+        .catalog-item__more-icon::before {
+          height: 60px;
+          left: 29px; } }
+    .catalog-item__more-icon::after {
+      position: absolute;
+      bottom: 14px;
+      content: '';
+      display: block;
+      height: 2px;
+      width: 30px;
+      background: #d3d3d3; }
+      @media screen and (min-width: 768px) {
+        .catalog-item__more-icon::after {
+          width: 60px;
+          bottom: 29px; } }
+  .catalog-item__more-title {
+    font-family: OswaldRegular;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #111;
+    text-transform: uppercase; }
+    @media screen and (min-width: 768px) {
+      .catalog-item__more-title {
+        width: 135px;
+        text-align: center;
+        font-size: 20px; } }
+  .catalog-item__more-text {
+    margin-top: 10px;
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 16px; }
+    @media screen and (min-width: 768px) {
+      .catalog-item__more-text {
+        width: 170px;
+        margin-top: 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 18px; } }
+  .catalog-item__more-btn {
+    background: #f1f1f1;
+    color: #222;
+    margin-top: 24px;
+    margin-bottom: 24px; }
+    @media screen and (min-width: 768px) {
+      .catalog-item__more-btn {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 20px; } }
+    @media screen and (min-width: 1440px) {
+      .catalog-item__more-btn:hover {
+        background: #ebebeb; }
+      .catalog-item__more-btn:active {
+        color: #b9b9b9; } }
+
 .catalog-item {
   border-top: 1px solid #e6e6e6;
   margin-bottom: 24px; }
@@ -246,21 +365,11 @@ body, ul, h2, h3 {
       .catalog-item__btn {
         margin-top: 33px;
         margin-bottom: 40px; } }
-
-.catalog-list__wrap {
-  display: flex;
-  flex-direction: column; }
-  @media screen and (min-width: 768px) {
-    .catalog-list__wrap {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 93%;
-      max-width: 900px;
-      margin: 0 auto; } }
-  @media screen and (min-width: 1440px) {
-    .catalog-list__wrap {
-      max-width: 1220px; } }
+    @media screen and (min-width: 1440px) {
+      .catalog-item__btn:hover {
+        background: #5daa2f; }
+      .catalog-item__btn:active {
+        color: #8ec46e; } }
 
 .contacts {
   margin-bottom: 50px; }

@@ -18,5 +18,137 @@
 		}
 
 	}
+}
 
+.catalog-item__more {
+	border-top: 1px solid #e6e6e6;
+
+		@include above($tablet) {
+			height: 433px;
+			width: 325px;
+			margin-top: 118px;
+			border: 1px solid #e6e6e6;
+			box-sizing: border-box;
+		}
+
+		@include above($desktop) {
+			width: 250px;
+		}
+
+	&-wrap {
+		@include flexIt(space-between, center);
+		flex-direction: column;
+		width: 80%;
+		min-width: 280px;
+		max-width: 350px;
+		margin: 0 auto;
+
+		@include above($tablet) {
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+			min-width: 250px;
+		}
+
+		@include above($desktop) {
+			min-width: 170px;
+		}
+	}
+
+	&-icon {
+		position: relative;
+		height: 30px;
+		width: 30px;
+		margin: 26px auto;
+
+		@include above($tablet) {
+			height: 60px;
+			width: 60px;
+			margin-top: 54px;
+		}
+		
+		&::before {
+			position: absolute;
+			left: 14px;
+			content: '';
+			display: block;
+			height: 30px;
+			width: 2px;
+			background: #d3d3d3;
+
+			@include above($tablet) {
+				height: 60px;
+				left: 29px;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			bottom: 14px;
+			content: '';
+			display: block;
+			height: 2px;
+			width: 30px;
+			background: #d3d3d3;
+
+			@include above($tablet) {
+				width: 60px;
+				bottom: 29px;
+			}
+		}
+	}
+
+	&-title {
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 400;
+		color: #111;
+		text-transform: uppercase;
+
+		@include above($tablet) {
+			width: 135px;
+			text-align: center;
+			font-size: 20px;
+		}
+	}
+
+	&-text {
+		margin-top: 10px;
+		font-family: Arial;
+		font-size: 12px;
+		line-height: 16px;
+
+		@include above($tablet) {
+			width: 170px;
+			margin-top: 0;
+			text-align: center;
+			font-size: 16px;
+			line-height: 18px;
+		}
+	}
+
+	&-btn {
+		background: #f1f1f1;
+		color: #222;
+		margin-top: 24px;
+		margin-bottom: 24px;
+
+		@include above($tablet) {
+			margin-bottom: 40px;
+			font-size: 16px;
+			line-height: 20px;
+		}
+
+		@include above($desktop) {
+			&:hover {
+				background: #ebebeb;
+			}
+
+			&:active {
+				color: #b9b9b9;
+			}
+		}
+
+	}
 }

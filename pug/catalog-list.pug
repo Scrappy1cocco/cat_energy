@@ -11,11 +11,12 @@ mixin catalog-list
       each link in list
         +catalog-item({setdesk:link._setdesk, settabl:link._settabl, source:link._source, sourset:link._sourset, alter:link._alter, title:link._title, bulk:link._bulk, taste:link._taste, price:link._price})
 
-      .catalog-item.catalog-item--more
-        .catalog-item__more-icon
+      .catalog-item__more
+        .catalog-item__more-wrap
+          .catalog-item__more-icon
           H3.catalog-item__more-title
             | Показать ещё 100500 товаров
           SPAN.catalog-item__more-text
             | На самом деле вкусов гораздо больше!
-          +btn({href:'#'})
+          +btn({href:'#'})(class = "catalog-item__more-btn")
             | Показать все
