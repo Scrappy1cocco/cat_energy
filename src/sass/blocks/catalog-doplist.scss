@@ -1,4 +1,29 @@
 .catalog-doplist {
 	
+	&__title-wrap {
+		position: relative;
+		display: flex;
+		width: 90%;
+		min-width: 280px;
+		max-width: 350px;
+		margin: 0 auto;
+	}
 
+	&__title-name {
+		width: 250px;
+		font-family: OswaldRegular;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 400;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 14px;
+			left: 242px;
+			display: inline-block;
+			height: 3px;
+			width: 50px;
+			background: #67b737;
+		}
+	}
 }

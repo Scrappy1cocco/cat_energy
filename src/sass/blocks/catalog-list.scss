@@ -38,7 +38,7 @@
 	&-wrap {
 		@include flexIt(space-between, center);
 		flex-direction: column;
-		width: 80%;
+		width: 90%;
 		min-width: 280px;
 		max-width: 350px;
 		margin: 0 auto;
