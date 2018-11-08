@@ -1,16 +1,12 @@
 .catalog-doplist {
-	
-	&__title-wrap {
-		position: relative;
-		display: flex;
-		width: 90%;
-		min-width: 280px;
-		max-width: 350px;
-		margin: 0 auto;
-	}
+	padding-top: 25px;
+	overflow: hidden;
+	border-top: 1px solid #ededed;
 
-	&__title-name {
+	&__title {
+		position: relative;
 		width: 250px;
+		margin-bottom: 30px;
 		font-family: OswaldRegular;
 		font-size: 24px;
 		line-height: 24px;
@@ -19,11 +15,50 @@
 			content: '';
 			position: absolute;
 			top: 14px;
-			left: 242px;
-			display: inline-block;
 			height: 3px;
-			width: 50px;
+			left: 100%;
+			width: 100vw;
 			background: #67b737;
+		}
+
+		@include above($tablet) {
+			width: 413px;
+			padding-left: 38px;
+			font-size: 36px;
+			line-height: 36px;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 14px;
+				height: 3px;
+				right: 100%;
+				width: 100vw;
+				background: #67b737;
+
+			}
+
+		}
+	}
+
+	&__wrap {
+		@include above($tablet) {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		@include above($desktop) {
+			@include flexIt(space-between,'');
+			max-width: none;
+			
+		}
+	}
+
+	&__list {
+
+		@include above($desktop) {
+			width: 895px;
+			@include flexIt(space-between,'');
+			flex-direction: column;
 		}
 	}
 }

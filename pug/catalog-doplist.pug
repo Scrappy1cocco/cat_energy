@@ -3,21 +3,20 @@ mixin catalog-doplist
   include catalog-dopitem
   include btn
 
-  - var doplist = [{_title:'Сахарозаменитель', _amount:'1 упаковка', _value:'100 Р.'}, {_title:'Питьевая вода', _amount:'5 литров', _value:'50 Р.'}, {_title:'Молоко', _amount:'1 литр', _value:'100 Р.'}, {_title:'Витамины', _amount:'1 упаковка (30 г)', _value:'300 Р.'}];
+  - var doplist = [{_title:'Сахарозаменитель', _amount:'1 Упаковка', _value:'100 р.', _priceClass:'catalog-dopitem__price-value--small'}, {_title:'Питьевая вода', _amount:'5 литров', _value:'50 р.'}, {_title:'Молоко', _amount:'1 литр', _value:'100 р.'}, {_title:'Витамины', _amount:'1 упаковка (30 г)', _value:'300 р.', _itemClass:'catalog-dopitem--border-bottom'}];
   
   .catalog-doplist
-    
-    .catalog-doplist__title-wrap
-      H3.catalog-doplist__title-name
-        | Дополнительные товары
 
     .container
+
+      H3.catalog-doplist__title
+        | Дополнительные товары
 
       .catalog-doplist__wrap
         .catalog-doplist__list
 
           each link in doplist
-            +catalog-dopitem({title:link._title, amount:link._amount, value:link._value})
+            +catalog-dopitem({title:link._title, amount:link._amount, value:link._value, itemClass:link._itemClass, priceClass:link._priceClass})
 
         .catalog-doplist__gift
           .catalog-doplist__gift-wrap

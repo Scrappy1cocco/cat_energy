@@ -2,12 +2,12 @@ mixin catalog-dopitem(data)
   
   include btn
 
-  .catalog-dopitem
+  .catalog-dopitem(class= data.itemClass)
 
     .catalog-dopitem__content
-      SPAN.catalog-dopitem__title= data.title
+      H3.catalog-dopitem__title= data.title
       .catalog-dopitem__price
         SPAN.catalog-dopitem__price-amount= data.amount
-        SPAN.catalog-dopitem__price-value= data.value
-    +btn({href:'#'})
+        SPAN.catalog-dopitem__price-value(class= data.priceClass)= data.value
+    +btn({href:'#'})(class = "catalog-dopitem__btn")
       | Заказать

@@ -1,0 +1,91 @@
+.catalog-dopitem {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-top: 1px solid #cdcdcd;
+
+	@include above($tablet) {
+		padding: 27px 37px;
+		border: 1px solid #cdcdcd;
+		border-bottom: none;
+	}
+
+	@include above($desktop) {
+		@include flexIt(space-between, center);
+		padding-left: 0;
+		padding-right: 0;
+		border-left: none;
+		border-right: none;
+	}
+
+	
+	&__content {
+
+		@include above($tablet) {
+			@include flexIt(space-between,'');
+		}
+
+		@include above($desktop) {
+			width: 615px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		@include above($tablet) {
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+
+	&__price {
+		@include flexIt(space-between,'');
+		margin-bottom: 10px;
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 14px;
+		color: #444;
+
+		@include above($desktop) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__price-value {
+		text-transform: uppercase;
+
+		@include above($tablet) {
+			width: 44px;
+			margin-left: 45px;
+			text-align: right;
+			
+		}
+	}
+
+	&__btn {
+		font-size: 16px;
+		line-height: 20px;
+
+		@include above($tablet) {
+			max-width: none;
+		}
+
+		@include above($desktop) {
+			width: 245px;
+			margin: 0;
+		}
+	}
+
+	&--border-bottom {
+		border-bottom: 1px solid #cdcdcd;
+	}
+
+	&__price-value--small {
+		text-transform: none;
+	}
+}

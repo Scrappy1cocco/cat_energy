@@ -371,29 +371,128 @@ body, ul, h2, h3 {
       .catalog-item__btn:active {
         color: #8ec46e; } }
 
-.catalog-doplist__title-wrap {
-  position: relative;
-  display: flex;
-  width: 90%;
-  min-width: 280px;
-  max-width: 350px;
-  margin: 0 auto; }
+.catalog-doplist {
+  padding-top: 25px;
+  overflow: hidden;
+  border-top: 1px solid #ededed; }
+  .catalog-doplist__title {
+    position: relative;
+    width: 250px;
+    margin-bottom: 30px;
+    font-family: OswaldRegular;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400; }
+    .catalog-doplist__title::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      height: 3px;
+      left: 100%;
+      width: 100vw;
+      background: #67b737; }
+    @media screen and (min-width: 768px) {
+      .catalog-doplist__title {
+        width: 413px;
+        padding-left: 38px;
+        font-size: 36px;
+        line-height: 36px; }
+        .catalog-doplist__title::before {
+          content: '';
+          position: absolute;
+          top: 14px;
+          height: 3px;
+          right: 100%;
+          width: 100vw;
+          background: #67b737; } }
+  @media screen and (min-width: 768px) {
+    .catalog-doplist__wrap {
+      max-width: 900px;
+      margin: 0 auto; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-doplist__wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: "";
+      max-width: none; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-doplist__list {
+      width: 895px;
+      display: flex;
+      justify-content: space-between;
+      align-items: "";
+      flex-direction: column; } }
 
-.catalog-doplist__title-name {
-  width: 250px;
-  font-family: OswaldRegular;
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400; }
-  .catalog-doplist__title-name::after {
-    content: '';
-    position: absolute;
-    top: 14px;
-    left: 242px;
-    display: inline-block;
-    height: 3px;
-    width: 50px;
-    background: #67b737; }
+.catalog-dopitem {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #cdcdcd; }
+  @media screen and (min-width: 768px) {
+    .catalog-dopitem {
+      padding: 27px 37px;
+      border: 1px solid #cdcdcd;
+      border-bottom: none; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-dopitem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0;
+      padding-right: 0;
+      border-left: none;
+      border-right: none; } }
+  @media screen and (min-width: 768px) {
+    .catalog-dopitem__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: ""; } }
+  @media screen and (min-width: 1440px) {
+    .catalog-dopitem__content {
+      width: 615px; } }
+  .catalog-dopitem__title {
+    margin-bottom: 10px;
+    font-family: OswaldRegular;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    text-transform: uppercase; }
+    @media screen and (min-width: 768px) {
+      .catalog-dopitem__title {
+        font-size: 20px;
+        line-height: 20px; } }
+  .catalog-dopitem__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: "";
+    margin-bottom: 10px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 14px;
+    color: #444; }
+    @media screen and (min-width: 1440px) {
+      .catalog-dopitem__price {
+        margin-bottom: 0; } }
+  .catalog-dopitem__price-value {
+    text-transform: uppercase; }
+    @media screen and (min-width: 768px) {
+      .catalog-dopitem__price-value {
+        width: 44px;
+        margin-left: 45px;
+        text-align: right; } }
+  .catalog-dopitem__btn {
+    font-size: 16px;
+    line-height: 20px; }
+    @media screen and (min-width: 768px) {
+      .catalog-dopitem__btn {
+        max-width: none; } }
+    @media screen and (min-width: 1440px) {
+      .catalog-dopitem__btn {
+        width: 245px;
+        margin: 0; } }
+  .catalog-dopitem--border-bottom {
+    border-bottom: 1px solid #cdcdcd; }
+  .catalog-dopitem__price-value--small {
+    text-transform: none; }
 
 .contacts {
   margin-bottom: 50px; }
