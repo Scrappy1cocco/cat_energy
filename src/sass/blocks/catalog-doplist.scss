@@ -54,11 +54,100 @@
 	}
 
 	&__list {
-
+		margin-bottom: 39px;
 		@include above($desktop) {
 			width: 895px;
 			@include flexIt(space-between,'');
 			flex-direction: column;
+		}
+	}
+
+	&__gift {
+		@include flexIt(space-between, center);
+		flex-direction: column;
+		height: 289px;
+		margin-bottom: 40px;
+		background: url(../img/gift-photo-mobile@1x.jpg) no-repeat 50% 50%;
+
+		@include retina {
+			background: url(../img/gift-photo-mobile@2x.jpg) no-repeat 50% 50%;
+			background-size: cover;
+		}
+
+		@include above($tablet) {
+			justify-content: center;
+			height: 200px;
+			background: url(../img/gift-photo-tablet@1x.jpg) no-repeat 50% 50%;
+
+			@include retina {
+				background: url(../img/gift-photo-tablet@2x.jpg) no-repeat 50% 50%;
+				background-size: cover;
+			}
+		}
+
+		@include above($desktop) {
+			justify-content: space-between;
+			height: 289px;
+			width: 245px;
+			background: url(../img/gift-photo-desktop@1x.jpg) no-repeat 50% 50%;
+
+			@include retina {
+				background: url(../img/gift-photo-desktop@2x.jpg) no-repeat 50% 50%;
+				background-size: cover;
+			}
+		}
+	}
+
+	&__gift-wrap {
+		@include flexIt(space-between, center);
+		flex-direction: column;
+
+		@include above($tablet) {
+			flex-direction: row;
+			width: 495px;
+			margin-right: 30px;
+			margin-bottom: 10px;
+		}
+
+		@include above($desktop) {
+			flex-direction: column;
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__gift-text {
+		@include flexIt('', center);
+		flex-direction: column;
+		width: 165px;
+		font-family: Arial;
+		color: #fff;
+		text-align: center;
+
+		@include above($tablet) {
+			align-items: flex-start;
+			text-align: left;
+		}
+
+		@include above($desktop) {
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__gift-icon {
+		height: 61px;
+		width: 56px;
+		margin-top: 65px;
+		margin-bottom: 48px;
+
+		@include above($tablet) {
+			margin: 0;
+		}
+
+		@include above($desktop) {
+			margin-top: 65px;
+			margin-bottom: 48px;
 		}
 	}
 }

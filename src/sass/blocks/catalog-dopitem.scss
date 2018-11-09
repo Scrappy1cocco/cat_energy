@@ -13,6 +13,8 @@
 		@include flexIt(space-between, center);
 		padding-left: 0;
 		padding-right: 0;
+		padding-top: 15px;
+		padding-bottom: 15px;
 		border-left: none;
 		border-right: none;
 	}
@@ -41,6 +43,10 @@
 			font-size: 20px;
 			line-height: 20px;
 		}
+
+		@include above($desktop) {
+			margin-bottom: 0;
+		}
 	}
 
 	&__price {
@@ -53,6 +59,8 @@
 
 		@include above($desktop) {
 			margin-bottom: 0;
+			align-items: center;
+			
 		}
 	}
 
@@ -78,6 +86,14 @@
 		@include above($desktop) {
 			width: 245px;
 			margin: 0;
+			
+			&:hover {
+				background: #5daa2f;
+			}
+
+			&:active {
+				color: #8ec46e;
+			}
 		}
 	}
 
