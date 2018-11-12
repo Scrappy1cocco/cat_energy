@@ -1,0 +1,177 @@
+.order {
+	
+	&__intro {
+		width: 230px;
+		margin-bottom: 45px;
+		font-family: OswaldRegular;
+		font-size: 14px;
+		line-height: 18px;
+		text-transform: uppercase;
+		color: #111;
+
+		@include above($tablet) {
+			width: 325px;
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+
+	&__cat {
+		overflow: hidden;
+
+		@include above($desktop) {
+			@include flexIt(space-between,'');
+
+		}
+	}
+
+	&__cat-info {
+		margin-bottom: 40px;
+
+		@include above($desktop) {
+			width: 40%;
+			
+		}
+	}
+
+	&__info-row {
+		@include flexIt('', center);
+		height: 45px;
+		margin-bottom: 15px;
+
+		@include above($tablet) {
+			height: 52px;
+		}
+	}
+
+	&__info-row-title {
+		margin-right: 15px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		color: #222;
+
+		@include above($tablet) {
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+
+	&__info-row-data {
+		flex-grow: 1;
+		height: 100%;
+		padding-left: 15px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		box-sizing: border-box;
+		border: 1px solid #e6e6e6;
+		outline: none;
+
+		&::placeholder {
+			color: #444;
+		}
+
+		@include above($tablet) {
+			padding-left: 19px;
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+
+	&__cat-style {
+		border-top: 1px solid #ededed;
+
+		@include above($tablet) {
+			margin-left: auto;
+			border: none;
+		}
+	}
+
+	&__cat-style-wrap {
+		padding-top: 25px;
+
+		@include above($tablet) {
+			min-width: 700px;
+			width: 100vw;
+			max-width: none;
+			padding-left: 27px;
+			margin-right: -14%;
+			border: 1px solid #e6e6e6;
+		}
+	}
+
+	&__style-row {
+		@include flexIt('', center);
+		position: relative;
+		height: 30px;
+		margin-bottom: 15px;
+
+		@include above($tablet) {
+			height: 40px;
+		}
+	}
+
+	&__style-row-turn {
+		display: none;
+
+		&:checked + .order__style-row-title:after {
+			display: block;
+		}		
+	}
+
+	&__style-row-title {
+		padding-left: 40px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		color: #222;
+
+		@include above($tablet) {
+			padding-left: 60px;
+			font-size: 20px;
+			line-height: 20px;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 28px;
+			width: 28px;
+			border: 1px solid #cecece;
+			border-radius: 15px;
+
+			@include above($tablet) {
+				height: 38px;
+				width: 38px;
+				border-radius: 20px;
+			}
+		}
+
+		&:after {
+			content: '';
+			display: none;
+			position: absolute;
+			top: 9px;
+			left: 9px;
+			height: 12px;
+			width: 12px;
+			background: #67b737;
+			border-radius: 7px;
+
+			@include above($tablet) {
+				height: 18px;
+				width: 18px;
+				top: 11px;
+				left: 11px;
+				border-radius: 10px;
+			}
+		}
+	}
+}

@@ -27,6 +27,27 @@ body, ul, h2, h3 {
 	}  
 }
 
+.container--form {
+
+	@include above($tablet) {
+		width: 82%;
+		min-width: 630px;
+	}
+}
+
+.container--margin-left-auto {
+	padding-top: 25px;
+
+	@include above($tablet) {
+		min-width: 700px;
+		width: 100vw;
+		max-width: none;
+		padding-left: 27px;
+		margin-right: -14%;
+		border: 1px solid #e6e6e6;
+	}
+}
+
 .header-menu__list-item--active::after {
 	content: "";
 	display: block;
