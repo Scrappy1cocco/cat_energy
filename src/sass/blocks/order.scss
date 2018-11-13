@@ -18,10 +18,12 @@
 
 	&__cat {
 		overflow: hidden;
+		margin-bottom: 25px;
 
 		@include above($desktop) {
 			@include flexIt(space-between,'');
-
+			max-width: 1220px;
+			margin: 0 auto;
 		}
 	}
 
@@ -29,8 +31,7 @@
 		margin-bottom: 40px;
 
 		@include above($desktop) {
-			width: 40%;
-			
+			flex-grow: 1;
 		}
 	}
 
@@ -41,6 +42,10 @@
 
 		@include above($tablet) {
 			height: 52px;
+		}
+
+		@include above($desktop) {
+			margin-bottom: 20px;
 		}
 	}
 
@@ -70,28 +75,52 @@
 		border: 1px solid #e6e6e6;
 		outline: none;
 
+		&:focus {
+			padding-left: 14px;
+			border: 2px solid #434343;
+		}
+
+		&:invalid {
+			border-color: #ff8282;
+		}
+
 		&::placeholder {
 			color: #444;
 		}
+
 
 		@include above($tablet) {
 			padding-left: 19px;
 			font-size: 20px;
 			line-height: 20px;
 		}
+
+		@include above($desktop) {
+
+			&:hover {
+				border-color: #cdcdcd;
+			}
+		}
 	}
 
 	&__cat-style {
 		border-top: 1px solid #ededed;
+		border-bottom: 1px solid #ededed;
 
 		@include above($tablet) {
 			margin-left: auto;
 			border: none;
 		}
+
+		@include above($desktop) {
+			width: 570px;
+			margin-left: 80px;
+		}
 	}
 
 	&__cat-style-wrap {
 		padding-top: 25px;
+		padding-bottom: 4px;
 
 		@include above($tablet) {
 			min-width: 700px;
@@ -101,6 +130,13 @@
 			margin-right: -14%;
 			border: 1px solid #e6e6e6;
 		}
+
+		@include above($desktop) {
+			width: 100%;
+			min-width: auto;
+			margin-right: 0px;
+			box-sizing: border-box;
+		}
 	}
 
 	&__style-row {
@@ -108,6 +144,8 @@
 		position: relative;
 		height: 30px;
 		margin-bottom: 15px;
+
+		
 
 		@include above($tablet) {
 			height: 40px;
@@ -129,11 +167,23 @@
 		line-height: 18px;
 		text-transform: uppercase;
 		color: #222;
+		cursor: pointer;
 
 		@include above($tablet) {
 			padding-left: 60px;
 			font-size: 20px;
 			line-height: 20px;
+		}
+
+		@include above($desktop) {
+
+			&:hover:before {
+				border-color: #bbb;
+			}
+
+			&:active {
+				opacity: .3;
+			}
 		}
 
 		&:before {
@@ -171,6 +221,266 @@
 				top: 11px;
 				left: 11px;
 				border-radius: 10px;
+			}
+		}
+	}
+
+	&__owner {
+		overflow: hidden;
+
+		@include above($tablet) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__owner-title {
+		position: relative;
+		width: 201px;
+		margin-bottom: 25px;
+		font-family: OswaldRegular;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #111;
+		box-sizing: border-box;
+
+		&:after {
+		    content: "";
+		    position: absolute;
+		    top: 14px;
+		    height: 3px;
+		    left: 100%;
+		    width: 100vw;
+		    background: #67b737;
+		}
+
+		@include above($tablet) {
+			width: 592px;
+			padding-left: 4.8vw;
+			margin-bottom: 70px;
+			font-size: 36px;
+			line-height: 36px;
+
+			&:before {
+			    content: "";
+			    position: absolute;
+			    top: 20px;
+			    height: 3px;
+			    right: 100%;
+			    width: 100vw;
+			    background: #67b737;
+			}
+
+			&:after {
+				top: 20px;
+			}
+		}
+
+		@include above($desktop) {
+			padding-left: 40px;
+			margin-left: -40px;
+		}
+	}
+
+	&__owner-wrap {
+
+		@include above($desktop) {
+			@include flexIt(space-between,'');
+
+		}
+	}
+
+	&__contacts-email {
+
+		@include above($desktop) {
+			width: 568px;
+		}
+	}
+
+	&__contacts-phone {
+
+		@include above($desktop) {
+			width: 572px;
+		}
+	}
+
+	&__contacts-row {
+		position: relative;
+		@include flexIt('', center);
+		margin-bottom: 20px;
+	}
+	
+	&__contacts-row-title {
+		margin-right: 15px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		
+		@include above($tablet) {
+			font-size: 20px;
+			line-height: 20px;
+		}
+	}
+
+	&__contacts-row-data {
+		flex-grow: 1;
+		height: 45px;
+		padding-left: 15px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		border: 1px solid #e6e6e6;
+		outline: none;
+		box-sizing: border-box;
+
+		&::placeholder {
+			color: #444;
+		}
+
+		&:focus {
+			padding-left: 14px;
+			border: 2px solid #434343;
+		}
+
+		&:focus + .order__contacts-row-icon {
+			fill: #67b737;
+		}
+
+		&:invalid {
+			border-color: #ff8282;
+		}
+
+		&:invalid + .order__contacts-row-icon {
+			fill: #ff8282;
+		}
+
+		@include above($tablet) {
+			height: 52px;
+			font-size: 20px;
+			line-height: 20px;
+		}
+
+		@include above($desktop) {
+
+			&:hover {
+				border-color: #cdcdcd;
+			}
+		}
+	}
+
+	&__contacts-row-icon {
+		position: absolute;
+		right: 12px;
+	}
+
+	&__contacts-row-icon--email {
+		right: 15px;
+		height: 13px;
+		width: 17px;
+	}
+
+	&__contacts-row-icon--phone {
+		height: 20px;
+		width: 20px;
+	}
+
+	&__comment {
+		overflow: hidden;
+	}
+
+	&__comment-title {
+		position: relative;
+		width: 142px;
+		margin-bottom: 25px;
+		font-family: OswaldRegular;
+		font-size: 24px;
+		line-height: 24px;
+		color: #111;
+		font-weight: 400;
+		box-sizing: border-box;
+
+		&:after {
+		    content: "";
+		    position: absolute;
+		    top: 14px;
+		    height: 3px;
+		    left: 100%;
+		    width: 100vw;
+		    background: #67b737;
+		}
+
+		@include above($tablet) {
+			width: 259px;
+			padding-left: 4.8vw;
+			margin-bottom: 70px;
+			font-size: 36px;
+			line-height: 36px;
+
+			&:before {
+			    content: "";
+			    position: absolute;
+			    top: 20px;
+			    height: 3px;
+			    right: 100%;
+			    width: 100vw;
+			    background: #67b737;
+			}
+
+			&:after {
+				top: 20px;
+			}
+		}
+
+		@include above($desktop) {
+			padding-left: 40px;
+			margin-left: -40px;
+		}
+	}
+
+	&__comment-text {
+		height: 150px;
+		width: 100%;
+		padding-top: 10px;
+		padding-left: 14px;
+		margin-bottom: 20px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+		resize: none;
+		outline: none;
+		border: 1px solid #e6e6e6;
+		box-sizing: border-box;
+
+		&::placeholder {
+			color: #444;
+		}
+
+		&:focus {
+			padding-top: 9px;
+			padding-left: 13px;
+			border: 2px solid #434343;
+		}
+
+		@include above($tablet) {
+			height: 175px;
+			padding-left: 19px;
+			margin-bottom: 50px;
+			font-size: 20px;
+			line-height: 30px;
+
+			&:focus {
+				padding-top: 9px;
+				padding-left: 18px;
+			}
+		}
+
+		@include above($desktop) {
+
+			&:hover {
+				border-color: #cdcdcd;
 			}
 		}
 	}

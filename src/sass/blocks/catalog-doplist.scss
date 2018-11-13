@@ -36,7 +36,10 @@
 				background: #67b737;
 
 			}
+		}
 
+		@include above($desktop) {
+			margin-left: -40px;
 		}
 	}
 

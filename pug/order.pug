@@ -32,41 +32,54 @@ mixin order
                 label.order__style-row-title(for= link._id)= link._text
 
     .order__owner
+      .container
 
-      H3.order__owner-title
-        | Контактные данные (владельца кота)
+        H3.order__owner-title
+          | Контактные данные (владельца кота)
 
       .order__owner-contacts
-        .order__contacts-email
-          label(for = 'email') E-mail:*
-          input(type = 'text' id = 'email' placeholder = 'kuklachev@gmail.com')
-          img(src='' alt='иконка письма')
+        .container.container--form
+          
+          .order__owner-wrap
+            .order__contacts-email
+              label.order__contacts-row
+                span.order__contacts-row-title E-mail:*
+                input.order__contacts-row-data(type = 'text' placeholder = 'kuklachev@gmail.com')
+                svg.order__contacts-row-icon(class = 'order__contacts-row-icon--email')
+                  USE(xlink:href = "img/svg/symbols.svg#icon-mail")
 
-        .order__contacts-phone
-          label(for = 'phone') Телефон:*
-          input(type = 'text' id = 'phone' placeholder = '8 (960) 900-60-60')
-          img(src='' alt='иконка телефона')
+            .order__contacts-phone
+              label.order__contacts-row 
+                span.order__contacts-row-title Телефон:*
+                input.order__contacts-row-data(type = 'text' placeholder = '8 (960) 900-60-60')
+                svg.order__contacts-row-icon(class = 'order__contacts-row-icon--phone')
+                  USE(xlink:href = "img/svg/symbols.svg#icon-phone")
 
     .order__comment
+      .container
 
-      H3.order__comment-title
-        | Комментарий
-
-      TEXTAREA.order__comment-text(placeholder='Расскажите обо всех повадках кота')
+        H3.order__comment-title
+          | Комментарий
+      
+      .container.container--form
+        TEXTAREA.order__comment-text(placeholder='Расскажите обо всех повадках кота')
     
     .order__dop
+      .container
 
       H3.order__dop-title
         | Дополнительно
 
-      .order__dop-products
+    .order__dop-products
+      .container.container--form
 
         each link in products
           .order__products-turn(class = link._class)
             input(type = 'checkbox' name = 'product' id= link._id, value= link._id)
             label(for= link._id)= link._text
-    
-    .order__btn-wrap
+  
+  .order__btn-wrap
+    .container.container--form
 
       input(type = 'submit' value = "Отправить заявку" class = 'order__btn-submit')
       SPAN.order__btn-text * — Обязательные поля
