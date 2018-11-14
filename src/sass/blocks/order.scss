@@ -93,6 +93,10 @@
 			padding-left: 19px;
 			font-size: 20px;
 			line-height: 20px;
+
+			&:focus {
+				padding-left: 18px;
+			}
 		}
 
 		@include above($desktop) {
@@ -484,4 +488,208 @@
 			}
 		}
 	}
+
+	&__dop {
+		margin-bottom: 30px;
+		overflow: hidden;
+	}
+
+	&__dop-products-wrap {
+
+		@include above($tablet) {
+			@include flexIt(space-between,'');
+			flex-wrap: wrap;
+		}
+	}
+
+	&__dop-title {
+		position: relative;
+		width: 165px;
+		margin-bottom: 25px;
+		font-family: OswaldRegular;
+		font-size: 24px;
+		line-height: 24px;
+		color: #111;
+		font-weight: 400;
+		box-sizing: border-box;
+
+		&:after {
+		    content: "";
+		    position: absolute;
+		    top: 14px;
+		    height: 3px;
+		    left: 100%;
+		    width: 100vw;
+		    background: #67b737;
+		}
+
+		@include above($tablet) {
+			width: 292px;
+			padding-left: 4.8vw;
+			margin-bottom: 70px;
+			font-size: 36px;
+			line-height: 36px;
+
+			&:before {
+			    content: "";
+			    position: absolute;
+			    top: 20px;
+			    height: 3px;
+			    right: 100%;
+			    width: 100vw;
+			    background: #67b737;
+			}
+
+			&:after {
+				top: 20px;
+			}
+		}
+
+		@include above($desktop) {
+			padding-left: 40px;
+			margin-left: -40px;
+		}
+	}
+
+	&__products-row {
+		@include flexIt('', center);
+		position: relative;
+		height: 30px;
+		margin-bottom: 10px;
+
+		@include above($tablet) {
+			height: 40px;
+			width: 36.5%;
+			margin-bottom: 32px;
+		}
+
+		@include above($desktop) {
+			width: 230px;
+		}
+	}
+
+	&__products-row-turn {
+		display: none;
+		
+		&:checked + .order__products-row-title:after {
+			display: block;
+		}		
+	}
+
+	&__products-row-title {
+		padding-left: 50px;
+		font-family: OswaldRegular;
+		font-size: 16px;
+		line-height: 18px;
+		text-transform: uppercase;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			height: 30px;
+			width: 30px;
+			border: 1px solid #cfcfcf;
+			box-sizing: border-box;
+		}
+		
+		&:after {
+			display: none;
+			content: '';
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			height: 10px;
+			width: 20px;
+			border: 2px solid #67b737;
+			border-top: none;
+			border-right: none;
+			transform: rotate(-45deg);
+			box-sizing: border-box;
+		}
+
+		@include above($tablet) {
+			padding-left: 58px;
+			font-size: 20px;
+			line-height: 20px;
+
+			&:before {
+				height: 40px;
+				width: 40px;
+			}
+
+			&:after {
+				top: 13px;
+				left: 11px;
+			}
+		}
+
+		@include above($desktop) {
+
+			&:hover:before {
+				border-color: #bbb;
+			}
+
+			&:active {
+				opacity: .3;
+			}
+		}
+	}
+
+	&__btn {
+		margin-bottom: 40px;
+	}
+
+	&__btn-wrap {
+		@include flexIt(space-between, center);
+		flex-direction: column;
+
+		@include above($tablet) {
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+	}
+	
+	&__btn-submit {
+		padding: 0;
+		margin-bottom: 20px;
+		font-size: 16px;
+		line-height: 20px;
+		border: none;
+
+		@include above($tablet) {
+			height: 52px;
+			width: 45%;
+			max-width: 568px;
+			margin: 0;
+			margin-right: 61px;
+			font-size: 20px;
+		}
+
+		@include above($desktop) {
+			margin-right: 82px;
+
+			&:hover {
+				background: #5daa2f;
+			}
+
+			&:active {
+				color: #8ec46e;
+			}
+		}
+	}
+
+	&__btn-text {
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 16px;
+		color: #444;
+
+		@include above($tablet) {
+			font-size: 16px;
+		}
+	}
+
 }

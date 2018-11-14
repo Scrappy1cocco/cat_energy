@@ -6,7 +6,7 @@ mixin order
 
   - var style = [{_class:'order__style-row--slim', _id:'styleslim', _text:'Похудение', _chkd:'checked'}, {_class:'order__style-row--pro', _id:'stylepro', _text:'Набор массы'},{_class:'order__style-row--idk', _id:'styleidk', _text:'Не знаю (нужен ваш совет)'}];
 
-  - var products = [{_class:'order__products-turn--sugar', _id:'sugar', _text:'сахарозаменитель'}, {_class:'order__products-turn--water', _id:'water', _text:'питьевая вода'}, {_class:'order__products-turn--milk', _id:'milk', _text:'молоко'}, {_class:'order__products-turn--vitamins', _id:'vitamins', _text:'витамины'}];
+  - var products = [{_class:'order__products-row--sugar', _id:'sugar', _text:'сахарозаменитель', _chkd:'checked'}, {_class:'order__products-row--water', _id:'water', _text:'питьевая вода'}, {_class:'order__products-row--milk', _id:'milk', _text:'молоко'}, {_class:'order__products-row--vitamins', _id:'vitamins', _text:'витамины'}];
 
   FORM.order(action = 'https://echo.htmlacademy.ru' method = 'post')
     .container.container--form
@@ -67,19 +67,21 @@ mixin order
     .order__dop
       .container
 
-      H3.order__dop-title
-        | Дополнительно
+        H3.order__dop-title
+          | Дополнительно
 
-    .order__dop-products
-      .container.container--form
-
-        each link in products
-          .order__products-turn(class = link._class)
-            input(type = 'checkbox' name = 'product' id= link._id, value= link._id)
-            label(for= link._id)= link._text
+      .order__dop-products
+        .container.container--form
+          .order__dop-products-wrap
   
-  .order__btn-wrap
-    .container.container--form
-
-      input(type = 'submit' value = "Отправить заявку" class = 'order__btn-submit')
-      SPAN.order__btn-text * — Обязательные поля
+            each link in products
+              .order__products-row(class = link._class)
+                input.order__products-row-turn(type = 'checkbox' name = 'product' id= link._id, value= link._id, checked= link._chkd)
+                label.order__products-row-title(for= link._id)= link._text
+    
+    .order__btn
+      .container.container--form
+        
+        .order__btn-wrap
+          input.btn(type = 'submit' value = "Отправить заявку" class = 'order__btn-submit')
+          SPAN.order__btn-text * — Обязательные поля
