@@ -1,10 +1,19 @@
 mixin contacts
+
   .contacts
-    .container
-      .contacts__invate
-        SPAN.contacts__invate-title
+    .contacts__invate
+
+      .container.contacts__invate-wrap
+
+        .contacts__invate-title
+          SPAN.contacts__title-top
+            | Приглашаем
+          SPAN.contacts__title-bottom
+            | К сотрудничеству дилеров!
         .contacts__invate-address
           SPAN.contacts__address-street
             | ул. Большая Конюшенная, д. 19/8
           SPAN.contacts__address-city
             | Санкт-Петербург
+
+    .contacts__map

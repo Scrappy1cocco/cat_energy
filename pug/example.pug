@@ -1,6 +1,6 @@
 mixin example
   
-  - var stat = [{classSt:'example__weight', classVal:'example__weight-value', classText:'example__weight-text', value:'5 кг', text:'снижение веса'}, {classSt:'example__days', classVal:'example__days-value', classText:'example__days-text', value:'60 дней', text:'затрачено времени'}];
+  - var stat = [{classSt:'example__stat-item--weight', value:'5 кг', text:'снижение веса'}, {classSt:'example__stat-item--days', classText:'example__stat-text--days', value:'60 дней', text:'затрачено времени'}];
 
   .example
 
@@ -8,19 +8,21 @@ mixin example
       H2.example__title
         | Живой пример
 
-      .example__descrip
-        P.example__descrip-text.
+      .example__description
+        P.example__description-text.
           Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
 
-        .example__stat
+        .example__description-stat
           each link in stat
-            DIV(class= link.classSt)
-              SPAN(class= link.classVal)= link.value
-              SPAN(class= link.classText)= link.text
+            .example__stat-item(class= link.classSt)
+              SPAN.example__stat-value= link.value
+              SPAN.example__stat-text(class= link.classText)= link.text
 
         .example__cost
-          SPAN.example__cost-title Затраты на питание:
-          SPAN.example__cost-value 15 000 руб.
+          SPAN.example__cost-title
+            | Затраты на питание:
+          SPAN.example__cost-value
+            | 15 000 руб.
 
-        .example__befafter
-          //- здесь будет скрипт
+      .example__befafter
+        //- здесь будет скрипт

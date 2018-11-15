@@ -1,3 +1,142 @@
 .example {
+	padding-top: 15px;
 	margin-bottom: 50px;
+	background-color: #f2f2f2;
+
+	@include above($tablet) {
+		padding-top: 50px;
+		background-color: #fff;
+		border-top: 1px solid #e6e6e6;
+	}
+
+	&__title {
+		font-family: OswaldRegular;
+		font-size: 36px;
+		line-height: 60px;
+		font-weight: 400;
+		color: #111;
+
+		@include above($tablet) {
+			margin-bottom: 60px;
+			font-size: 60px;
+			line-height: 60px;
+		}
+	}
+
+	&__description {
+
+		@include above($tablet) {
+			@include flexIt(space-between, flex-start);
+			flex-wrap: wrap;
+		}
+	}
+
+	&__description-text {
+		width: calc(100% - 14px);
+		margin-bottom: 25px;
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 18px;
+		color: #444;
+
+		@include above($tablet) {
+			margin-bottom: 40px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	&__description-stat {
+		@include flexIt(space-between, '');
+		margin-bottom: 30px;
+
+		@include above($tablet) {
+			width: 366px;
+		}
+	}
+
+	&__stat-item {
+		@include flexIt(space-between, center);
+		flex-direction: column;
+		height: 56px;
+		width: 43%;
+		border: 1px solid #cdcdcd;
+		border-radius: 3px;
+		box-sizing: border-box;
+
+		@include above($tablet) {
+			height: 72px;
+			width: 162px;
+		}
+	}
+
+	&__stat-value {
+		margin-top: 13px;
+		font-family: OswaldRegular;
+		font-size: 24px;
+		line-height: 24px;
+		text-transform: uppercase;
+		
+		@include above($tablet) {
+			margin-top: 15px;
+			font-size: 30px;
+			line-height: 37px;
+		}
+	}
+
+	&__stat-text {
+		width: 87px;
+		padding-right: 16px;
+		padding-left: 16px;
+		margin-bottom: -16px;
+		font-family: Arial;
+		font-size: 12px;
+		line-height: 12px;
+		color: #444;
+		text-align: center;
+		background-color: #f2f2f2;
+		box-sizing: border-box;
+
+		@include above($tablet) {
+			width: 114px;
+			padding-right: 9px;
+			padding-left: 8px;
+			margin-bottom: -7px;
+			font-size: 14px;
+			line-height: 14px;
+			background-color: #fff;
+		}
+	}
+	
+	&__stat-text--days {
+		width: 108px;
+
+		@include above($tablet) {
+			width: 144px;
+		}
+	}
+
+	&__cost {
+		@include flexIt(center, '');
+		font-family: OswaldRegular;
+		font-size: 14px;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: #111;
+
+		@include above($tablet) {
+			flex-direction: column;
+			align-items: flex-end;
+			margin-top: 13px;
+			font-size: 20px;
+		}
+	}
+
+	&__cost-title {
+		margin-right: 3px;
+
+		@include above($tablet) {
+			margin-bottom: 10px;
+		}
+	}
 }

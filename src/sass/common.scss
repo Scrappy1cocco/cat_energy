@@ -4,7 +4,7 @@ body, ul, h2, h3 {
 }
 
 .container {
-	width: 90%;
+	width: 87%;
 	min-width: 280px;
 	max-width: 350px;
 	margin: 0 auto;
@@ -14,7 +14,7 @@ body, ul, h2, h3 {
 	}
 
 	@include above($tablet) {
-		width: 93%;	
+		width: 92%;	
 		max-width: 900px;
 	}
 
