@@ -595,51 +595,56 @@ body, ul, h2, h3 {
   .catalog-dopitem__price-value--small {
     text-transform: none; }
 
-.contacts {
-  margin-bottom: 50px; }
-  .contacts__invate-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    @media screen and (min-width: 768px) {
-      .contacts__invate-wrap {
-        align-items: flex-start;
-        padding: 0 42px;
-        box-sizing: border-box; } }
-  .contacts__invate-title {
-    display: flex;
-    flex-direction: column;
-    width: 125px;
-    font-family: OswaldRegular;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase; }
-    @media screen and (min-width: 768px) {
-      .contacts__invate-title {
-        width: 155px;
-        font-size: 20px;
-        line-height: 25px; } }
-  .contacts__invate-address {
-    display: flex;
-    flex-direction: column;
-    width: 135px;
-    font-family: Arial;
-    font-size: 14px;
-    line-height: 20px;
-    color: #444; }
-    @media screen and (min-width: 768px) {
-      .contacts__invate-address {
-        width: 155px;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: right; } }
+.contacts__invate-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 114px; }
   @media screen and (min-width: 768px) {
-    .contacts__address-street {
-      margin-bottom: 18px; } }
+    .contacts__invate-wrap {
+      align-items: flex-start;
+      padding: 0 42px;
+      box-sizing: border-box; } }
+
+.contacts__invate-title {
+  display: flex;
+  flex-direction: column;
+  width: 125px;
+  font-family: OswaldRegular;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase; }
+  @media screen and (min-width: 768px) {
+    .contacts__invate-title {
+      width: 155px;
+      font-size: 20px;
+      line-height: 25px; } }
+
+.contacts__invate-address {
+  display: flex;
+  flex-direction: column;
+  width: 135px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444; }
+  @media screen and (min-width: 768px) {
+    .contacts__invate-address {
+      width: 155px;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: right; } }
+
+@media screen and (min-width: 768px) {
+  .contacts__address-street {
+    margin-bottom: 18px; } }
+
+.contacts__map {
+  height: 362px;
+  width: 100%; }
 
 .example {
   padding-top: 15px;
-  margin-bottom: 50px;
   background-color: #f2f2f2; }
   @media screen and (min-width: 768px) {
     .example {
@@ -1750,7 +1755,9 @@ body, ul, h2, h3 {
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 20px;
-  border: none; }
+  border: none;
+  outline: none;
+  cursor: pointer; }
   @media screen and (min-width: 768px) {
     .order__btn-submit {
       height: 52px;

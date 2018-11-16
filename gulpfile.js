@@ -111,7 +111,7 @@ gulp.task("serve", ["style"], function() {
     ui: false
   });
 
-    gulp.watch("src/js/*.js", ["scripts"]);
+    // gulp.watch("src/js/*.js", ["scripts"]);
     gulp.watch("src/sass/**/*.scss", ["style"]);
     gulp.watch("pug/**/*.pug", ["pug"]);
     gulp.watch("src/img/*.+(jpg|jpeg|png|gif)", ["imgs"]);

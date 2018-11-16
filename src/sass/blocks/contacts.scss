@@ -1,9 +1,9 @@
 .contacts {
-	margin-bottom: 50px;
 
 	&__invate-wrap {
 		@include flexIt(space-between, center);
-		
+		height: 114px;
+
 		@include above($tablet) {
 			align-items: flex-start;
 			padding: 0 42px;
@@ -52,4 +52,9 @@
 		}
 	}
 	
+	&__map {
+		height: 362px;
+		width: 100%;
+	}
+
 }

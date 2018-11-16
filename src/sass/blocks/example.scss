@@ -1,6 +1,5 @@
 .example {
 	padding-top: 15px;
-	margin-bottom: 50px;
 	background-color: #f2f2f2;
 
 	@include above($tablet) {
