@@ -15,6 +15,7 @@ var rename = require("gulp-rename");
 var svgstore = require("gulp-svgstore");
 var svgmin = require("gulp-svgmin");
 var del = require("del");
+const webpack = require("webpack-stream");
 
 gulp.task('pug', function buildHTML() {
     return gulp.src('pug/pages/*.pug')
@@ -40,7 +41,6 @@ gulp.task("style", function() {
 	        "last 2 Edge versions"
 	      ]})
 	    ]))
-        .pipe(gulp.dest("src/css"))
 	    .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest("src/css"))
@@ -59,13 +59,19 @@ gulp.task("vect", function() {
 });
 
 gulp.task("scripts", function() {
-    return gulp.src("src/js/*.js") 
-        .pipe(concat('scripts.js')) 
-        .pipe(gulp.dest("src/js"))
+    return gulp.src("src/app.js")  
+        .pipe(webpack( require('./webpack.config.js')))
         .pipe(uglify()) // вызов плагина uglify - сжатие кода
         .pipe(rename({ suffix: '.min' })) // вызов плагина rename - переименование файла с приставкой .min
+        .pipe(gulp.dest("src/js"))
         .pipe(gulp.dest("public/js")); // директория продакшена, т.е. куда сложить готовый файл
-});
+       });
+
+
+
+        
+       
+
 
 gulp.task('imgs', function() {
     return gulp.src("src/img/*.+(jpg|jpeg|png|gif)")
@@ -111,7 +117,7 @@ gulp.task("serve", ["style"], function() {
     ui: false
   });
 
-    // gulp.watch("src/js/*.js", ["scripts"]);
+    gulp.watch("src/**/*.js", ["scripts"]).on("change", server.reload);
     gulp.watch("src/sass/**/*.scss", ["style"]);
     gulp.watch("pug/**/*.pug", ["pug"]);
     gulp.watch("src/img/*.+(jpg|jpeg|png|gif)", ["imgs"]);

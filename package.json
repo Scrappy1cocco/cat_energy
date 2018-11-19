@@ -27,7 +27,9 @@
     "gulp-rename": "1.4.0",
     "gulp-svgstore": "7.0.0",
     "gulp-svgmin": "2.1.0",
-    "del": "3.0.0"
+    "del": "3.0.0",
+    "webpack": "^4.26.0",
+    "webpack-stream": "^5.1.1"
   },
   "scripts": {
     "test": "editorconfig-tools check *",
