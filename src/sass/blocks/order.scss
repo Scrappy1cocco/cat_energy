@@ -104,6 +104,9 @@
 			&:hover {
 				border-color: #cdcdcd;
 			}
+			&:hover:focus {
+				border-color: #434343;
+			}
 		}
 	}
 
@@ -371,6 +374,9 @@
 			&:hover {
 				border-color: #cdcdcd;
 			}
+			&:hover:focus {
+				border-color: #434343;
+			}
 		}
 	}
 
@@ -486,6 +492,9 @@
 			&:hover {
 				border-color: #cdcdcd;
 			}
+			&:hover:focus {
+				border-color: #434343;
+			}
 		}
 	}
 
@@ -582,6 +591,7 @@
 		font-size: 16px;
 		line-height: 18px;
 		text-transform: uppercase;
+		cursor: pointer;
 
 		&:before {
 			content: '';

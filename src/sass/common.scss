@@ -41,12 +41,32 @@ body, ul, h2, h3 {
 }
 
 
-.header-menu__list-item--active::after {
-	content: "";
-	display: block;
-	position: absolute;
-	bottom: 15px;
-	height: 2px;
-	width: 100%;
-	background: #67b737;
+.active::after {
+
+	@include above($tablet) {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 15px;
+		height: 2px;
+		width: 100%;
+		background: #67b737;
+	}
+}
+
+.active--white::after {
+
+	@include above($tablet) {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 15px;
+		height: 2px;
+		width: 100%;
+		background: #67b737;
+	}
+
+	@include above($desktop) {
+		background: #fff;
+	}
 }
