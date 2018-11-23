@@ -9,7 +9,6 @@ var postcss = require("gulp-postcss");
 var pug = require("gulp-pug");
 var cssnano = require("gulp-cssnano");
 var imagemin = require("gulp-imagemin");
-var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var svgstore = require("gulp-svgstore");
@@ -61,16 +60,11 @@ gulp.task("vect", function() {
 gulp.task("scripts", function() {
     return gulp.src("src/app.js")  
         .pipe(webpack( require('./webpack.config.js')))
-        .pipe(uglify()) // вызов плагина uglify - сжатие кода
-        .pipe(rename({ suffix: '.min' })) // вызов плагина rename - переименование файла с приставкой .min
+        // .pipe(uglify()) // вызов плагина uglify - сжатие кода
+        // .pipe(rename({ suffix: '.min' })) // вызов плагина rename - переименование файла с приставкой .min
         .pipe(gulp.dest("src/js"))
-        .pipe(gulp.dest("public/js")); // директория продакшена, т.е. куда сложить готовый файл
+        // .pipe(gulp.dest("public/js")); // директория продакшена, т.е. куда сложить готовый файл
        });
-
-
-
-        
-       
 
 
 gulp.task('imgs', function() {

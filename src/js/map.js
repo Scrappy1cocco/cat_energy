@@ -10,9 +10,6 @@ function initMap() {
 		  	var mid = {lat: 59.938775, lng: 30.323105}; 
 		  }
 
-
-		  console.log(icon);
-
 		  var marker = new google.maps.Marker({
 		  	  position: markPosition,
 		  	  map: map,

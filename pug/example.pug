@@ -24,5 +24,7 @@ mixin example
           SPAN.example__cost-value
             | 15 000 руб.
 
-      .example__befafter
-        //- здесь будет скрипт
+      .example__befter(id="comparison")
+        .example__before
+          .example__after(id="divisor")
+        input(type="range" min="0" max="100" value="50" id="slider")
