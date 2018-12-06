@@ -2,18 +2,17 @@
 
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync");
-var plumber = require("gulp-plumber");
+var autoprefixer = require("autoprefixer"); //добавляет автопрефиксы
+var server = require("browser-sync"); //обновляет страницу
+var plumber = require("gulp-plumber"); //проверяет на ошибки
 var postcss = require("gulp-postcss");
 var pug = require("gulp-pug");
-var cssnano = require("gulp-cssnano");
-var imagemin = require("gulp-imagemin");
-var uglify = require("gulp-uglify");
-var rename = require("gulp-rename");
-var svgstore = require("gulp-svgstore");
-var svgmin = require("gulp-svgmin");
-var del = require("del");
+var cssnano = require("gulp-cssnano"); //минификация CSS
+var imagemin = require("gulp-imagemin"); //сжатие картинок
+var uglify = require("gulp-uglify");  //сжатие js
+var rename = require("gulp-rename");  //переименование файлов
+var svgstore = require("gulp-svgstore");  //сборка SVG в спрайт
+var svgmin = require("gulp-svgmin");  //сжатие SVG
 const webpack = require("webpack-stream");
 
 gulp.task('pug', function buildHTML() {
@@ -23,7 +22,7 @@ gulp.task('pug', function buildHTML() {
     // Your options in here.
     }))    
     .pipe(gulp.dest("src"))
-    .pipe(gulp.dest("public"))
+    //.pipe(gulp.dest("public"))
 });
 
 gulp.task("style", function() {
@@ -40,43 +39,18 @@ gulp.task("style", function() {
 	        "last 2 Edge versions"
 	      ]})
 	    ]))
-	    .pipe(cssnano())
-        .pipe(rename({ suffix: '.min' }))
+	    // 
+     //    .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest("src/css"))
-        .pipe(gulp.dest("public/css"))
-        .pipe(server.reload({stream: true}));
+        // 
+        // .pipe(server.reload({stream: true}));
 });
-
-gulp.task("fonts", function() {
-  return gulp.src(["src/fonts/*.woff", "src/fonts/*.woff2"])
-  .pipe(gulp.dest("public/fonts"))
-});
-
-gulp.task("vect", function() {
-  return gulp.src(["src/img/svg/**/*.svg"])
-  .pipe(gulp.dest("public/img/svg"))
-});
-
+ 
 gulp.task("scripts", function() {
     return gulp.src("src/app.js")  
         .pipe(webpack( require('./webpack.config.js')))
-        // .pipe(uglify()) // вызов плагина uglify - сжатие кода
-        // .pipe(rename({ suffix: '.min' })) // вызов плагина rename - переименование файла с приставкой .min
         .pipe(gulp.dest("src/js"))
-        // .pipe(gulp.dest("public/js")); // директория продакшена, т.е. куда сложить готовый файл
-       });
-
-
-gulp.task('imgs', function() {
-    return gulp.src("src/img/*.+(jpg|jpeg|png|gif)")
-        .pipe(imagemin({
-            progressive: true,
-            optimizationLevel: 3,
-            svgoPlugins: [{ removeViewBox: false }],
-            interlaced: true
-        }))
-        .pipe(gulp.dest("public/img"))
-});
+    });
 
 gulp.task("symbols", function() {
     return gulp.src("src/img/svg/sprite/*.svg")
@@ -88,17 +62,55 @@ gulp.task("symbols", function() {
         .pipe(gulp.dest("src/img/svg"));
 });
 
-gulp.task("clean", function() {
-  return del("public");
-});
+/*PUBLIC*/
+
+gulp.task("pugPub", function() {
+  return gulp.src(["src/*.html"])
+  .pipe(gulp.dest("public"))
+}); //перенос HTML в Public
+
+gulp.task("stylePub", function() {
+  return gulp.src(["src/style.css"])
+  .pipe(cssnano())
+  .pipe(gulp.dest("public/css"))
+}); //перенос CSS в Public, сжатие
+
+
+gulp.task("scriptsPub", function() {
+  return gulp.src(["src/js/bundle.js"])
+  .pipe(cssnano())
+  .pipe(gulp.dest("public/js"))
+}); //перенос JS в Public
+
+gulp.task("fonts", function() {
+  return gulp.src(["src/fonts/*.woff", "src/fonts/*.woff2"])
+  .pipe(gulp.dest("public/fonts"))
+}); //перенос шрифтов в Public
+
+gulp.task("vect", function() {
+  return gulp.src(["src/img/svg/**/*.svg"])
+  .pipe(gulp.dest("public/img/svg"))
+}); //перенос svg в Public
+
+gulp.task('imgsMin', function() {
+    return gulp.src("src/img/*.+(jpg|jpeg|png|gif)")
+        .pipe(imagemin({
+            progressive: true,
+            optimizationLevel: 3,
+            svgoPlugins: [{ removeViewBox: false }],
+            interlaced: true
+        }))
+        .pipe(gulp.dest("public/img"))
+}); //минимизация картинок и перес в Public
 
 gulp.task("public", function(fn) {
   run(
-  	"clean",
-    "pug", 
-    "style", 
-    "scripts",
-    "imgs",
+    "pugPub", 
+    "stylePub", 
+    "scriptsPub",
+    "fonts",
+    "vect",
+    "imgsMin",
     fn
   );
 });
@@ -115,5 +127,5 @@ gulp.task("serve", ["style"], function() {
     gulp.watch("src/sass/**/*.scss", ["style"]);
     gulp.watch("pug/**/*.pug", ["pug"]);
     gulp.watch("src/img/*.+(jpg|jpeg|png|gif)", ["imgs"]);
-    gulp.watch(["src/*.html", "pug/*.pug", "pug/**/*.pug", "src/css/style.css", "src/**/*.js"]).on("change", server.reload);
+    gulp.watch(["src/*.html", "pug/**/*.pug", "src/css/style.css", "src/**/*.js"]).on("change", server.reload);
 });

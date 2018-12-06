@@ -4,13 +4,12 @@ var divisor = document.getElementById("divisor"),
 
 console.log('1');
 
-
 function moveDivisor() { 
-	divisor.style.width = slider.value+"%";
+	divisor.style.width = -(slider.value+"%");
 	console.log('2');
 }
 
 slider.addEventListener('input', moveDivisor);
 
-// console.log(moreDivisor());
+// console.log(moreDvisor());
 
