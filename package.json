@@ -33,6 +33,8 @@
   "scripts": {
     "test": "editorconfig-tools check *",
     "start": "gulp serve",
-    "public": "gulp imgsMin vect fonts"
+    "public": "gulp pugPub stylePub scriptsPub imgsMin vect fonts"
   }
 }
+
+// СДЕЛАТЬ ЧТОБ JS ПРАВИЛЬНО СОБИРАЛСЯ!!!
