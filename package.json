@@ -36,5 +36,3 @@
     "public": "gulp pugPub stylePub scriptsPub imgsMin vect fonts"
   }
 }
-
-// СДЕЛАТЬ ЧТОБ JS ПРАВИЛЬНО СОБИРАЛСЯ!!!

@@ -78,7 +78,6 @@ gulp.task("stylePub", function() {
 
 gulp.task("scriptsPub", function() {
   return gulp.src(["src/js/bundle.js"])
-  .pipe(cssnano())
   .pipe(gulp.dest("public/js"))
 }); //перенос JS в Public
 
