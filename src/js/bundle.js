@@ -127,7 +127,7 @@ eval("var navMain = document.querySelector('.header__nav');\r\nvar navToggle = d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var divisor = document.getElementById(\"divisor\"),\r\n\tslider = document.getElementById(\"slider\");\r\n\r\n\r\nconsole.log('1');\r\n\r\nfunction moveDivisor() { \r\n\tdivisor.style.width = -(slider.value+\"%\");\r\n\tconsole.log('2');\r\n}\r\n\r\nslider.addEventListener('input', moveDivisor);\r\n\r\n// console.log(moreDvisor());\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/slider.js?");
+eval("\n\n//# sourceURL=webpack:///./src/js/slider.js?");
 
 /***/ })
 

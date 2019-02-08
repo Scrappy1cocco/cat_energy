@@ -790,7 +790,9 @@ body, ul, h2, h3 {
       .example__cost-title {
         margin-bottom: 10px; } }
   .example__befter {
-    display: none; }
+    display: flex;
+    justify-content: center;
+    align-items: ""; }
     @media screen and (min-width: 768px) {
       .example__befter {
         width: auto;
@@ -821,35 +823,57 @@ body, ul, h2, h3 {
       overflow: hidden;
       bottom: 0;
       height: 100%; } }
-
-input[type=range] {
-  -webkit-appearance: none;
-  position: relative;
-  top: -1.4rem;
-  left: -1.5%;
-  background-color: black;
-  width: 102%;
-  height: 2px; }
-
-input[type=range]:focus {
-  outline: none; }
-
-input[type=range]:active {
-  outline: none; }
-
-input[type=range]::active {
-  border: none;
-  outline: none; }
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  background: #000;
-  border-radius: 10px; }
-
-input[type=range]:focus::-webkit-slider-thumb {
-  background: white; }
+  .example__befter-slider-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: ""; }
+  .example__slider-mobile {
+    width: 85px;
+    height: 15px;
+    border: 1px solid #cdcdcd;
+    border-radius: 7px;
+    box-sizing: border-box; }
+  .example__mobile-textBefore {
+    font-family: OswaldRegular;
+    text-transform: uppercase; }
+  .example__slider-mobile-item {
+    width: 35px;
+    height: 6px;
+    margin-top: 3.5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    background-color: #68b738; }
+  .example__befter-slider {
+    display: none; }
+    @media screen and (min-width: 768px) {
+      .example__befter-slider {
+        -webkit-appearance: none;
+        position: relative;
+        top: -1.4rem;
+        left: -1.5%;
+        background-color: black;
+        width: 102%;
+        height: 2px; } }
+  @media screen and (min-width: 768px) {
+    .example__befter-slider:focus {
+      outline: none; } }
+  @media screen and (min-width: 768px) {
+    .example__befter-slider:active {
+      outline: none; } }
+  @media screen and (min-width: 768px) {
+    .example__befter-slider::active {
+      border: none;
+      outline: none; } }
+  @media screen and (min-width: 768px) {
+    .example__befter-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      background: #000;
+      border-radius: 10px; } }
+  @media screen and (min-width: 768px) {
+    .example__befter-slider:focus::-webkit-slider-thumb {
+      background: white; } }
 
 .intro {
   min-height: 555px; }

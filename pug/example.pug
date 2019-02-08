@@ -27,4 +27,13 @@ mixin example
       .example__befter(id="comparison")
         .example__before
           .example__after(id="divisor")
-        input(type="range" min="0" max="100" value="50" id="slider")
+
+        .example__befter-slider-mobile
+          SPAN.example__mobile-textBefore
+            | Было
+          .example__slider-mobile
+            .example__slider-mobile-item
+          SPAN.example__mobile-textAfter
+            | Стало
+
+        input.example__befter-slider(type="range" min="0" max="100" value="50" id="slider")
